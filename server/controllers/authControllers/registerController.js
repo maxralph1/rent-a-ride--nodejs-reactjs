@@ -51,7 +51,7 @@ const registerUser = async (req, res) => {
         username, 
         email, 
         password: hashedPassword, 
-        roles: accountType, 
+        role: accountType, 
         email_verify_token: emailVerifyToken
     });
 

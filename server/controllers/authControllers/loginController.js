@@ -27,7 +27,7 @@ const loginUser = async (req, res) => {
         {
             "userInfo": {
                 "username": userFound.username,
-                "roles": userFound.roles
+                "role": userFound.role
             }
         }, 
         process.env.ACCESS_TOKEN_SECRET, 
