@@ -23,10 +23,10 @@ const updateUserSchema = Joi.object({
     type: Joi.string().max(30),
     email_verified: Joi.string().max(30),
     active: Joi.boolean(),
-    soft_deleted: Joi.string().max(30),
-    verified: Joi.boolean(),
     deleted: Joi.string().max(30),
-    created_by: Joi.string()
+    verified: Joi.boolean(),
+    created_by: Joi.string(),
+    deleted_at: Joi.string().max(30)
 });
 
 

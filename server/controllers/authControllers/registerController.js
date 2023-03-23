@@ -7,19 +7,27 @@ const registerUserSchema = require('../../requestValidators/auth/registerUserVal
 
 
 const registerUser = async (req, res) => {
+    let validatedData;
     try {
-        const value = await registerUserSchema.validateAsync({ username: req.body.username, 
-                                                    email: req.body.email,
-                                                    password: req.body.password,
-                                                    type: req.body.type });
+        validatedData = await registerUserSchema.validateAsync({ username: req.body.username, 
+                                                            first_name: req.body.first_name,
+                                                            other_names: req.body.other_names,
+                                                            last_name: req.body.last_name,
+                                                            enterprise_name: req.body.enterprise_name,
+                                                            email: req.body.email,
+                                                            phone: req.body.phone,
+                                                            id_type: req.body.id_type,
+                                                            id_number: req.body.id_number,
+                                                            address: req.body.address,
+                                                            date_of_birth: req.body.date_of_birth,
+                                                            account_type: req.body.account_type, 
+                                                            password: req.body.password });
     } catch (error) {
         return res.status(400).json({ message: "Validation failed", details: `${error}` });
     }
 
-    const { username, email, password, type } = req.body;
-
-    const duplicateUsername = await User.findOne({ username }).exec();
-    const duplicateEmail = await User.findOne({ email }).exec();
+    const duplicateUsername = await User.findOne({ username: validatedData.username }).lean();
+    const duplicateEmail = await User.findOne({ email: validatedData.email }).lean();
 
     if (duplicateUsername) {
         return res.status(409).json({ message: `Username ${duplicateUsername.username} already exists` });
@@ -27,32 +35,42 @@ const registerUser = async (req, res) => {
         return res.status(409).json({ message: `User email ${duplicateEmail.email} already exists` });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(validatedData.password, 10);
 
     const emailVerifyToken = jwt.sign(
         { "username": req.body.username }, 
         process.env.EMAIL_VERIFY_TOKEN_SECRET, 
-        { expiresIn: 120 * 60 }
+        { expiresIn: 20 * 60 }
     );
 
     let accountType;
 
-    if (!type) {
-        accountType = { "level1": 1000 };
-    } else if (type && type == 'individual') {
-        accountType = { "level1": 1000 };
-    } else if (type && type == 'business') {
-        accountType = { "level2": 2000 };
-    } else if (type && type == 'individual', 'business') {
-        accountType = { "level1": 1000, "level2": 2000 };
+    if (!validatedData.account_type) {
+        accountType = ["level1"];
+    } else if (validatedData.account_type && validatedData.account_type == "individual") {
+        accountType = ["level1"];
+    } else if (validatedData.account_type && validatedData.account_type == "vendor") {
+        accountType = ["level2"];
+    } else if (validatedData.account_type && validatedData.account_type == "individual", "vendor") {
+        accountType = ["level1", "level2"];
     }
 
     const user = await new User({
-        username, 
-        email, 
-        password: hashedPassword, 
-        role: accountType, 
-        email_verify_token: emailVerifyToken
+        username: validatedData.username, 
+        first_name: validatedData.first_name, 
+        other_names: validatedData.other_names, 
+        last_name: validatedData.last_name, 
+        user_image_path: validatedData.user_image_path, 
+        enterprise_name: validatedData.enterprise_name, 
+        email: validatedData.email, 
+        phone: validatedData.phone, 
+        id_type: validatedData.id_type, 
+        id_number: validatedData.id_number, 
+        user_identification_image_path: validatedData.user_identification_image_path, 
+        address: validatedData.address, 
+        date_of_birth: validatedData.date_of_birth,  
+        roles: accountType, 
+        password: hashedPassword
     });
 
     user.save((error) => {

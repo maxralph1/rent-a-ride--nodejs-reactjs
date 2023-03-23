@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 
+
 const sendMail = async (senderEmail, recipientEmail, subject, html) => {
     try {
         // const transporter = nodemailer.createTransport({
@@ -23,7 +24,6 @@ const sendMail = async (senderEmail, recipientEmail, subject, html) => {
             }
         });
         
-
         await transporter.sendMail({
             from: senderEmail,
             to: recipientEmail,
@@ -36,5 +36,6 @@ const sendMail = async (senderEmail, recipientEmail, subject, html) => {
         console.log(error, "email not sent");
     }
 };
+
 
 module.exports = sendMail;

@@ -9,6 +9,7 @@ const path = require('path');
 const rfs = require('rotating-file-stream');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const fileupload = require('express-fileupload'); 
 const { logEvents } = require('./config/errorLogger')
 const errorLogHandler = require('./config/errorLogHandler')
 const corsOptions = require('./config/corsOptions');
@@ -40,6 +41,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
 app.use(cookieParser());
+app.use(fileupload({useTempFiles: true}))
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 app.use('/api/', express.static(path.join(__dirname, 'public')))

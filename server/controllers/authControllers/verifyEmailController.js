@@ -1,14 +1,18 @@
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
+const verifyMailLinkAuthenticateSchema = require('../../requestValidators/auth/verifyMailLinkAuthenticateValidator')
 
 
 const verifyMailLinkAuthenticate = async (req, res) => {
     try {
-        // const schema = Joi.object({ password: Joi.string().required() });
-        // const { error } = schema.validate(req.body);
-        // if (error) return res.status(400).send(error.details[0].message);
+        try {
+            validatedData = await verifyMailLinkAuthenticateSchema.validateAsync({ username: req.params.username, 
+                                                                                token: req.params.token })
+        } catch (error) {
+            return res.status(400).json({ message: "Validation failed", details: `${error}` })
+        }
 
-        const user = await User.findOne({ username: req.params.username, email_verify_token: req.params.token }).exec();
+        const user = await User.findOne({ username: validatedData.username, email_verify_token: validatedData.token }).exec();
         if (!user) return res.status(400).send("invalid/expired link");
 
         try {
@@ -17,7 +21,7 @@ const verifyMailLinkAuthenticate = async (req, res) => {
             return res.status(400).send("Verification failed");
         }
 
-        user.email_verified = Date.now();
+        user.email_verified = new Date().toISOString();;
         user.email_verify_token = '';
 
         await user.save();

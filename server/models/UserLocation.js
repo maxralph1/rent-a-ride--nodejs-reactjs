@@ -9,7 +9,8 @@ const userLocationSchema = new Schema({
         latitude: String,
         longitude: String,
         plus_code: String,
-        user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
+        user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        deleted_at: String
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

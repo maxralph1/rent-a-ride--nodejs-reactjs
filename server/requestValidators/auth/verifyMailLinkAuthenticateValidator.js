@@ -1,11 +1,10 @@
 const Joi = require('joi');
 
 
-const verifyMailedPasswordResetLinkSchema = Joi.object({
+const verifyMailLinkAuthenticateSchema = Joi.object({
     username: Joi.string(),
-    token: Joi.string(),
-    password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$'))
+    token: Joi.string()
 });
 
 
-module.exports = verifyMailedPasswordResetLinkSchema;
+module.exports = verifyMailLinkAuthenticateSchema;

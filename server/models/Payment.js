@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const paymentSchema = new Schema({
-        payment_initiated: Date,
+        payment_initiated_on: Date,
         payment_method: {
             type: String, 
             required: true,
@@ -16,10 +16,11 @@ const paymentSchema = new Schema({
             enum: ['Declined', 'Pending', 'Successful'],
             default: 'Pending'
         },
-        user_hiring: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-        user_renting: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        hiree: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        hirer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true },
-        vehicle_hire: { type: Schema.Types.ObjectId, ref: 'VehicleHire', required: true }
+        vehicle_hire: { type: Schema.Types.ObjectId, ref: 'VehicleHire', required: true },
+        deleted_at: String
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

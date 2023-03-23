@@ -1,6 +1,7 @@
 const { formatISO } = require('date-fns')
 const { logEvents } = require('./errorLogger')
 
+
 const logErrorHandler = (err, req, res, next) => {
     const dateTime = formatISO(new Date())
 
@@ -14,4 +15,5 @@ const logErrorHandler = (err, req, res, next) => {
     res.json({ message: err.message, isError: true })
 }
 
-module.exports = logErrorHandler
+
+module.exports = logErrorHandler;

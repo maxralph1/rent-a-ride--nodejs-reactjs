@@ -10,7 +10,8 @@ const vehicleLocationSchema = new Schema({
         latitude: String,
         longitude: String,
         plus_code: String,
-        vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true }
+        vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true },
+        deleted_at: String
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

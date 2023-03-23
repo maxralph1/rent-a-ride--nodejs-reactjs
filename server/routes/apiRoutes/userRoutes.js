@@ -12,7 +12,7 @@ router.route('/')
         .get(checkRoles(roles.admin), userController.getAllUsers)
         .post(checkRoles(roles.admin), userController.createUser);
 
-router.get('/:searchKey', userController.searchUsers);
+router.get('/:search', userController.searchUsers);
 
 router.get('/:user/payments', userController.getUserPayments);
 

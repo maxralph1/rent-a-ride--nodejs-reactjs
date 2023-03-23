@@ -18,10 +18,10 @@ const mailPasswordResetLink = async (req, res) => {
         }
 
         const user = await User.findOne({ email: validatedData.email }).exec();
-        if (!user) return res.status(400).json({ message: "Password reset link has been sent to your email if you have an account with us" });  // although this stops the process and does not send a verification email, it is done for security purposes in order not to expose to the potential harmful user, the existence of an account. We could consider removing the laat line, "if you have an account with us"
+        if (!user) return res.status(400).json({ message: "Password reset link has been sent to your email if you have an account with us" });  // although this stops the process and does not send a verification email, it is done for security purposes in order not to expose to the potential harmful user, the existence of an account. We could consider removing the last line, "if you have an account with us" or decide to inform them that they do not have an account with us.
         
         const passwordResetToken = jwt.sign(
-            { "username": user.username }, 
+            { "email": user.email }, 
             process.env.PASSWORD_RESET_TOKEN_SECRET, 
             { expiresIn: 10 * 60 }
         );
