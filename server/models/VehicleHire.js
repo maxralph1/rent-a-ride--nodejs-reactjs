@@ -3,20 +3,20 @@ const Schema = mongoose.Schema;
 
 
 const vehicleHireSchema = new Schema({
-        released: {
-            date: Date,
+        release: {
+            date: String,
             time: String,
         },
         due_back: { 
-            date: { type: Date, default: Date.now }, 
+            date: { type: String, default: Date.now }, 
             time: String 
         },
-        returned: {
-            date: Date,
+        return: {
+            date: String,
             time: String
         },
         paid: { type: Boolean, default: false },
-        vehicle_hire_charge_frequency: {
+        vehicle_hire_charge_timing: {
             type: String, 
             required: true,
             enum: ['minutes', 'seconds', 'hourly', 'days'],
@@ -24,8 +24,10 @@ const vehicleHireSchema = new Schema({
         },
         hiree: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         hirer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-        vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true },
-        deleted_at: String,
+        vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true }, 
+        booked_by: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        booking_updated_by: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        deleted_at: String
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }

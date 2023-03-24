@@ -12,26 +12,17 @@ router.route('/')
         .get(checkRoles(roles.admin), userController.getAllUsers)
         .post(checkRoles(roles.admin), userController.createUser);
 
-router.get('/:search', userController.searchUsers);
-
-router.get('/:user/payments', userController.getUserPayments);
-
-router.get('/:user/payments-made', userController.getUserPaymentsMade);
-
-router.get('/:user/payments-received', userController.getUserPaymentsReceived);
+router.get('/:search', checkRoles(roles.admin), userController.searchUsers);
 
 router.get('/:user/vehicles', userController.getUserVehicles);
 
-router.route('/:username')
+router.route('/:user')
         .get(userController.getUser)
-        .post(userController.softDeleteUser)
+        .patch(userController.softDeleteUser)
+        .put(userController.updateUser)
         .delete(checkRoles(roles.admin), userController.deleteUser);
 
-router.route('/:user')
-        .patch(userController.softDeleteUser)
-        .put(userController.updateUser);
-
-router.patch('/:user/admin-update', checkRoles(roles.admin), userController.updateUserAdminLevel);
+router.patch('/:user/update', checkRoles(roles.admin), userController.updateUserAdminLevel);
 
 router.patch('/:user/reactivate', checkRoles(roles.admin), userController.reactivateSoftDeletedUser);
 

@@ -6,9 +6,10 @@ const vehicleSchema = new Schema({
         vehicle_type: {
             type: String, 
             required: true,
-            enum: ['Sedan', 'Bike', 'Bicycle', 'SUV', 'Wagon', 'Truck'],
+            enum: ['Sedan', 'Bike', 'Bicycle', 'SUV', 'Wagon', 'Truck', 'others'],
             default: 'Sedan'
         },
+        vehicle_type_if_others: String,
         vehicle_brand: { type: String, required: true },
         vehicle_model: { type: String, required: true },
         vehicle_engine_number: { type: String, required: true },
@@ -46,9 +47,9 @@ const vehicleSchema = new Schema({
             default: {}
         },
         verified: { type: Date, default: false },
-        active: { type: Boolean, default: true },
         company_owned: { type: Boolean, default: false },
         added_by: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+        active: { type: Boolean, default: true },
         deleted_at: String
     },
     {

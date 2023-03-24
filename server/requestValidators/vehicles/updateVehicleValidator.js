@@ -15,7 +15,8 @@ const updateVehicleSchema = Joi.object({
     status: Joi.string().max(15),
     verified: Joi.string().max(20),
     active: Joi.string().max(20),
-    company_owned: Joi.string().max(20)
+    company_owned: Joi.string().max(20),
+    deleted_at: Joi.string()
 });
 
 

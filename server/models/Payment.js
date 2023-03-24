@@ -19,7 +19,8 @@ const paymentSchema = new Schema({
         hiree: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         hirer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         vehicle: { type: Schema.Types.ObjectId, ref: 'Vehicle', required: true },
-        vehicle_hire: { type: Schema.Types.ObjectId, ref: 'VehicleHire', required: true },
+        vehicle_hire: { type: Schema.Types.ObjectId, ref: 'VehicleHire', required: true }, 
+        paid_by: { type: Schema.Types.ObjectId, ref: 'User', required: true },
         deleted_at: String
     },
     {

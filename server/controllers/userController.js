@@ -1,12 +1,16 @@
 const bcrypt = require('bcrypt');
 const cloudinaryImageUpload = require('../config/imageUpload/cloudinary');
-const VehicleLocation = require('../models/VehicleLocation');
 const User = require('../models/User');
+const UserLocation = require('../models/UserLocation');
 const Vehicle = require('../models/Vehicle');
+const VehicleHire = require('../models/VehicleHire');
+const VehicleLocation = require('../models/VehicleLocation');
 const Payment = require('../models/Payment');
+const Interaction = require('../models/Interaction');
 const getUserSchema = require('../requestValidators/users/getUserValidator');
 const createUserSchema = require('../requestValidators/users/createUserValidator');
 const updateUserSchema = require('../requestValidators/users/updateUserValidator');
+const searchSchema = require('../requestValidators/searchValidator');
 
 
 const getAllUsers = async (req, res) => {
@@ -17,11 +21,11 @@ const getAllUsers = async (req, res) => {
 };
 
 const searchUsers = async (req, res) => {
-    if (!req?.params?.searchKey) return res.status(400).json({ message: "Search key required" });
+    if (!req?.params?.search) return res.status(400).json({ message: "Search key required" });
 
     let validatedData;
     try {
-        validatedData = await getUserSchema.validateAsync({ search: req.params.search })
+        validatedData = await searchSchema.validateAsync({ search: req.params.search })
     } catch (error) {
         return res.status(400).json({ message: "Search key validation failed", details: `${error}` });
     }
@@ -43,76 +47,19 @@ const getUser = async (req, res) => {
     try {
         validatedData = await getUserSchema.validateAsync({ user: req.params.user })
     } catch (error) {
-        return res.status(400).json({ message: "Search key validation failed", details: `${error}` });
+        return res.status(400).json({ message: "Validation failed", details: `${error}` });
     }
     
-    const user = await User
+    const userFound = await User
         .findOne({$or: [{username: new RegExp(validatedData.user, 'i')}, {first_name: new RegExp(validatedData.user, 'i')}, {other_names: new RegExp(validatedData.user, 'i')}, {last_name: new RegExp(validatedData.user, 'i')}]})
+        .select(['-password', '-email_verified', '-active', '-created_by', '-created_at', '-updated_at'])
         .where({ active: true })
         .lean();
-    if (!user) {
+    if (!userFound) {
         return res.status(404).json({ message: `No user matches ${validatedData.user}` });
     }
-    res.status(200).json({ data: user });
+    res.status(200).json({ data: userFound });
 };
-
-const getUserPayments = async (req, res) => {
-
-    let validatedData;
-    try {
-        validatedData = await getUserSchema.validateAsync({ user: req.params.user })
-    } catch (error) {
-        return res.status(400).json({ message: "User search term validation failed", details: `${error}` });
-    }
-
-    const userFound = await User.findOne({ _id: validatedData.user }).exec();
-    if (!userFound) return res.status(404).json({ message: "User does not exist." });
-
-    const payments = await Payment.find({$or: [{hiree: userFound._id}, {hirer: userFound._id}]}).sort('-created_at').lean();
-    if (!payments?.length) return res.status(404).json({ message: "Found no payments made/received belonging to user" });
-
-    res.status(200).json({ data: payments });
-    // res.status(200).json({ user: userFound.username, vehicles });
-}
-
-const getUserPaymentsMade = async (req, res) => {
-
-    let validatedData;
-    try {
-        validatedData = await getUserSchema.validateAsync({ user: req.params.user })
-    } catch (error) {
-        return res.status(400).json({ message: "User search term validation failed", details: `${error}` });
-    }
-
-    const userFound = await User.findOne({ _id: validatedData.user }).exec();
-    if (!userFound) return res.status(404).json({ message: "User does not exist." });
-
-    const payments = await Payment.find({ hiree: userFound._id }).sort('-created_at').lean();
-
-    if (!payments?.length) return res.status(404).json({ message: "Found no payments made belonging to user" });
-
-    res.status(200).json({ data: payments });
-    // res.status(200).json({ user: userFound.username, vehicles });
-}
-
-const getUserPaymentsReceived = async (req, res) => {
-
-    let validatedData;
-    try {
-        validatedData = await getUserSchema.validateAsync({ user: req.params.user })
-    } catch (error) {
-        return res.status(400).json({ message: "User search term validation failed", details: `${error}` });
-    }
-
-    const userFound = await User.findOne({ _id: validatedData.user }).exec();
-    if (!userFound) return res.status(404).json({ message: "User does not exist." });
-
-    const payments = await Payment.find({ hirer: userFound._id }).sort('-created_at').lean();
-    if (!payments?.length) return res.status(404).json({ message: "Found no received payments belonging to user" });
-
-    res.status(200).json({ data: payments });
-    // res.status(200).json({ user: userFound.username, vehicles });
-}
 
 const getUserVehicles = async (req, res) => {
 
@@ -130,7 +77,6 @@ const getUserVehicles = async (req, res) => {
     if (!vehicles?.length) return res.status(404).json({ message: "Found no vehicles belonging to user" });
 
     res.status(200).json({ data: vehicles });
-    // res.status(200).json({ user: userFound.username, vehicles });
 }
 
 const createUser = async (req, res) => {
@@ -380,7 +326,7 @@ const softDeleteUser = async (req, res) => {
         if (error) {
             return res.status(400).json(error);
         }
-        res.status(200).json({message: `User ${userFound.username} inactivated / deleted` });
+        res.status(200).json({ success: `User ${userFound.username} inactivated / deleted` });
     });
 }
 
@@ -398,7 +344,7 @@ const reactivateSoftDeletedUser = async (req, res) => {
 
     if (userFound.active == false) {
         userFound.active = true; 
-        userFound.soft_deleted = ''; 
+        userFound.deleted_at = ''; 
     }
 
     userFound.save((error) => {
@@ -421,48 +367,59 @@ const deleteUser = async (req, res) => {
 
     const user = await User.findOne({ _id: validatedData.user }).exec();
     if (!user) {
-        return res.status(404).json({ message: `No user matches the user ${validatedData.username}` });
+        return res.status(404).json({ message: `No user matches the user ${validatedData.user}` });
     }
 
-    const payment = await Payment.find({ user: user._id}).exec();
+    const ifAuthenticatedUser = await User.findOne({ _id: req.user_id }).lean();
 
-    const vehicle = await Vehicle.find({ user: user._id}).exec();
-    if (!user && !vehicle) {
-        return res.status(404).json({ message: `No vehicles belong to the user`})
-    }
+    if (ifAuthenticatedUser._id == req.user_id) {
+        return res.status(403).json({ message: "You cannot delete yourself D:" });
 
-    const deletedUser = await user.deleteOne();
+    } else if (ifAuthenticatedUser._id != req.user_id) {
 
-    // if (location) {
-    //     // Delete all locations belonging to the deleted user if there is any.
-    //     await location.deleteMany();
-    // }
+        // Find and delete all other information relating to user; then, the user
+        const userLocations = await UserLocation.find({ user: validatedData.user }).exec();
+        // const payments = await Payment.find({ user: validatedData.user }).exec();
+        const vehicles = await Vehicle.find({ user: validatedData.user }).exec();
+        const vehicleHires = await VehicleHire.find({ user: validatedData.user }).exec();
+        const vehicleLocations = await VehicleLocation.find({ vehicle: vehicles._id }).exec();
+        const interactions = await Interaction.find({ for_user: validatedData.user }).exec();
 
-    if (payment) {
-        // Delete all payments belonging to the deleted user if there is any.
-        await payment.deleteMany();
-    }
+        if (userLocations) {
+            await userLocations.deleteMany();
+        }
 
-    if (vehicle) {
-        // Delete the location of the vehicle before the deleting the vehicle
-        const location = await VehicleLocation.findOne({ vehicle: vehicle._id });
-        await location.deleteOne();
+        // if (payments) {
+        //     await payments.deleteMany();
+        // }
 
-        // Delete all vehicles belonging to the deleted user if there is any.
-        await vehicle.deleteMany();
-    }
+        if (vehicles) {
+            await vehicles.deleteMany();
+        }
 
-    res.status(200).json({message: `User ${deletedUser} and all records belonging to user have been permannently deleted` })
+        if (vehicleHires) {
+            await vehicleHires.deleteMany();
+        }
+
+        if (userLocations) {
+            await userLocations.deleteMany();
+        }
+
+        if (interactions) {
+            await interactions.deleteMany();
+        }
+
+        const deletedUser = await user.deleteOne();
+
+        res.status(200).json({ success: `User ${deletedUser} and all records belonging to user have been permanently deleted` })
+    };
 };
 
 
 module.exports = {
     getAllUsers,
     searchUsers,
-    getUser,
-    getUserPayments,
-    getUserPaymentsMade,
-    getUserPaymentsReceived,
+    getUser, 
     getUserVehicles,
     createUser,
     updateUser,

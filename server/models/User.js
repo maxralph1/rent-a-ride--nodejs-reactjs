@@ -40,7 +40,6 @@ const userSchema = new Schema({
             default: {}
         },
         created_by: { type: Schema.Types.ObjectId, ref: 'User' },
-        deleted: { type: Boolean, default: false },
         deleted_at: String
     },
     {

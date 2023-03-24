@@ -8,9 +8,10 @@ const createVehicleHireSchema = Joi.object({
     due_back_time: Joi.string().max(30).required(),
     return_date: Joi.string().max(30).required(),
     return_time: Joi.string().max(30).required(),
-    user_hiring: Joi.string().required(),
-    user_renting: Joi.string().required(),
-    vehicle: Joi.string().required(),
+    vehicle_hire_charge_timing: Joi.string(),
+    hiree: Joi.string().required(),
+    hirer: Joi.string().required(),
+    vehicle: Joi.string().required()
 });
 
 

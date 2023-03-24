@@ -8,9 +8,14 @@ const updateVehicleHireSchema = Joi.object({
     due_back_time: Joi.string().max(30),
     return_date: Joi.string().max(30),
     return_time: Joi.string().max(30),
-    user_hiring: Joi.string(),
-    user_renting: Joi.string(),
+    paid: Joi.string().max(30),
+    vehicle_hire_charge_timing: Joi.string(),
+    hiree: Joi.string(),
+    hirer: Joi.string(),
     vehicle: Joi.string(),
+    booked_by: Joi.string(),
+    booking_updated_by: Joi.string(),
+    deleted_at: Joi.string()
 });
 
 
