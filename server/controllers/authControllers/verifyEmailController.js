@@ -1,9 +1,47 @@
+const asyncHandler = require('express-async-handler');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 const verifyMailLinkAuthenticateSchema = require('../../requestValidators/auth/verifyMailLinkAuthenticateValidator')
 
 
-const verifyMailLinkAuthenticate = async (req, res) => {
+/**
+ * @apiGroup Auth
+ * @apiPermission public
+ * @api {post} /api/v1/auth/verify-email/:user/:token Verify Newly Registered User Email
+ * @apiName VerifyRegisteredUserEmail
+ * 
+ * @apiParam {Number} user Users unique ID.
+ * @apiParam {Number} token Unique token received via email.
+ * 
+ * @apiDescription This verifies the registration link of the newly registered user.
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "success": "Email verified sucessfully"
+ *     }
+ * 
+ * @apiError PasswordResetErrors Possible error messages.
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Validation Failed
+ *     {
+ *       "message": "Validation failed.",
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 400 Error
+ *     {
+ *       "message": "Invalid/expired link"
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 400 Error
+ *     {
+ *       "message": "An error occured"
+ *       "details": "..."
+ *     }
+ */
+const verifyMailLinkAuthenticate = asyncHandler(async (req, res) => {
     try {
         try {
             validatedData = await verifyMailLinkAuthenticateSchema.validateAsync({ username: req.params.username, 
@@ -30,7 +68,7 @@ const verifyMailLinkAuthenticate = async (req, res) => {
     } catch (error) {
         res.status(400).json({ message: "An error occured", details: `${error}` });
     }
-};
+});
 
 
 module.exports = { verifyMailLinkAuthenticate }

@@ -1,4 +1,5 @@
-const bcrypt = require('bcrypt');
+const asyncHandler = require('express-async-handler');
+// const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 const mailPasswordResetLinkSchema = require('../../requestValidators/auth/mailPasswordResetLinkValidator');
@@ -7,7 +8,41 @@ const sendMail = require('../../mails/sendMail');
 const passwordResetMailTemplate = require('../../mails/templates/passwordResetMail');
 
 
-const mailPasswordResetLink = async (req, res) => {
+/**
+ * @apiGroup Auth
+ * @apiPermission public
+ * @api {post} /api/v1/auth/password-reset Reset User Password
+ * @apiName ResetUserPassword
+ * 
+ * @apiDescription This resets the password of an existing user.
+ * 
+ * @apiBody {String} email       Email of the user.
+ * @apiExample {json} Request Body:
+ *     {
+ *       "email": "johnsnow@email.com",
+ *     }
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "success": "Password reset link has been sent to your email if you have an account with us"
+ *     }
+ * 
+ * @apiError PasswordResetErrors Possible error messages.
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Validation Failed
+ *     {
+ *       "message": "Validation failed.",
+ *       ...
+ *     }
+ * 
+ *     HTTP/1.1 400 Error
+ *     {
+ *       "message": "An error occured"
+ *       "details": "..."
+ *     }
+ */
+const mailPasswordResetLink = asyncHandler(async (req, res) => {
     try {
 
         let validatedData;
@@ -38,10 +73,46 @@ const mailPasswordResetLink = async (req, res) => {
     } catch (error) {
         res.status(400).json({ message: "An error occured", details: `${error}` });
     }
-};
+});
 
-const verifyMailedPasswordResetLink = async (req, res) => {
-    
+/**
+ * @apiGroup Auth
+ * @apiPermission public
+ * @api {post} /api/v1/auth/password-reset/:user/:token Verify Password Reset Link
+ * @apiName VerifyPasswordReset
+ * 
+ * @apiParam {Number} user Users unique ID.
+ * @apiParam {Number} token Unique token received via email.
+ * 
+ * @apiDescription This verifies the password reset link.
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "success": "Password reset sucessfully"
+ *     }
+ * 
+ * @apiError PasswordResetErrors Possible error messages.
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Validation Failed
+ *     {
+ *       "message": "Validation failed.",
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 400 Error
+ *     {
+ *       "message": "Invalid/expired link"
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 400 Error
+ *     {
+ *       "message": "An error occured"
+ *       "details": "..."
+ *     }
+ */
+const verifyMailedPasswordResetLink = asyncHandler(async (req, res) => {
     try {
         
         let validatedData;
@@ -66,9 +137,7 @@ const verifyMailedPasswordResetLink = async (req, res) => {
             return res.status(400).json({ message: "Invalid/expired link", details: `${error}` });
         }
 
-        const hashedPassword = await bcrypt.hash(validatedData.password, 10);
-
-        user.password = hashedPassword;
+        user.password = validatedData.password;
         user.password_reset_token = '';
         await user.save();
 
@@ -76,7 +145,10 @@ const verifyMailedPasswordResetLink = async (req, res) => {
     } catch (error) {
         res.status(400).json({ message: "An error occured", details: `${error}` });
     }
+});
+
+
+module.exports = { 
+    mailPasswordResetLink, 
+    verifyMailedPasswordResetLink 
 };
-
-
-module.exports = { mailPasswordResetLink, verifyMailedPasswordResetLink };

@@ -14,10 +14,11 @@ router.route('/')
 
 router.route('/:vehicle-hire')
         .get(vehicleHireController.getVehicleHire)
+        .put(vehicleHireController.stopVehicleHire)
         .patch(vehicleHireController.softDeleteVehicleHire);
 
 router.route('/:id')
-        .put(vehicleHireController.updateVehicleHire)
+        // .put(vehicleHireController.updateVehicleHire)
         .patch(checkRoles(roles.admin), vehicleHireController.updateVehicleHireAdminLevel)
         .delete(checkRoles(roles.admin), vehicleHireController.deleteVehicleHire);
 

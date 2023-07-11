@@ -2,20 +2,21 @@ const Joi = require('joi');
 
 
 const updateVehicleSchema = Joi.object({
-    vehicle_type: Joi.string().max(30).required(),
-    vehicle_brand: Joi.string().max(30).required(),
-    vehicle_model: Joi.string().max(30).required(),
-    vehicle_engine_number: Joi.string().max(30).required(),
-    vehicle_identification_number: Joi.string().max(30).required(),
-    vehicle_plate_number: Joi.string().max(30).required(),
-    vehicle_hire_rate_in_figures: Joi.number().max(35),
-    vehicle_hire_rate_currency: Joi.string().max(20),
-    vehicle_hire_charge_per_timing: Joi.string().max(10),
-    maximum_allowable_distance: Joi.string().max(20),
-    status: Joi.string().max(15),
-    verified: Joi.string().max(20),
-    active: Joi.string().max(20),
-    company_owned: Joi.string().max(20),
+    vehicle_type: Joi.string(),
+    vehicle_type_if_others: Joi.string(),
+    vehicle_brand: Joi.string(),
+    vehicle_model: Joi.string(),
+    vehicle_engine_number: Joi.string(),
+    vehicle_identification_number: Joi.string(),
+    vehicle_plate_number: Joi.string(),
+    vehicle_hire_rate_in_figures: Joi.number(),
+    vehicle_hire_rate_currency: Joi.string(),
+    vehicle_hire_charge_per_timing: Joi.string(),
+    maximum_allowable_distance: Joi.string(),
+    status: Joi.string(),
+    verified: Joi.string(),
+    active: Joi.string(),
+    company_owned: Joi.string(),
     deleted_at: Joi.string()
 });
 

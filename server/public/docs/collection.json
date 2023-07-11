@@ -1,0 +1,2464 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost:5000"
+        }
+    ],
+    "info": {
+        "name": "Rent-A-Ride Documentation",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_postman_id": "a28eb58c-aa9d-4423-a147-1c3869b1973d"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "item": [
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/refresh-token",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/refresh-token"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "99"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "880"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application/json; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\n    \"message\": \"Unauthorized\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/register",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/verify-email/:username/:token",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/verify-email/:username/:token",
+                            "variable": [
+                                {
+                                    "id": "username",
+                                    "key": "username",
+                                    "value": "fuga",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "token",
+                                    "key": "token",
+                                    "value": "placeat",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/login",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/logout",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/logout"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "98"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                }
+                            ],
+                            "code": 204,
+                            "body": "",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/password-reset",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/password-reset"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/auth/password-reset/:username/:token",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/auth/password-reset/:username/:token",
+                            "variable": [
+                                {
+                                    "id": "username",
+                                    "key": "username",
+                                    "value": "dolore",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "token",
+                                    "key": "token",
+                                    "value": "voluptatem",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "97"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"in\",\n    \"first_name\": \"et\",\n    \"other_names\": \"quae\",\n    \"last_name\": \"nisi\",\n    \"enterprise_name\": \"ullam\",\n    \"email\": \"molestiae\",\n    \"phone\": \"a\",\n    \"id_type\": \"asperiores\",\n    \"id_number\": \"dolor\",\n    \"date_of_birth\": \"consequatur\",\n    \"address\": \"quia\",\n    \"account_type\": \"aut\",\n    \"active\": \"et\",\n    \"verified\": \"consequatur\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:search",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:search",
+                            "variable": [
+                                {
+                                    "id": "search",
+                                    "key": "search",
+                                    "value": "aperiam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "96"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user/vehicles",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user/vehicles",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "voluptas",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "95"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "qui",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "94"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "incidunt",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"user\": \"illum\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "sunt",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"est\",\n    \"first_name\": \"repellat\",\n    \"other_names\": \"in\",\n    \"last_name\": \"et\",\n    \"enterprise_name\": \"deserunt\",\n    \"email\": \"corrupti\",\n    \"phone\": \"ut\",\n    \"id_type\": \"doloremque\",\n    \"id_number\": \"est\",\n    \"date_of_birth\": \"sed\",\n    \"address\": \"alias\",\n    \"account_type\": \"qui\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "officia",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user/update",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user/update",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "aut",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"et\",\n    \"first_name\": \"aspernatur\",\n    \"other_names\": \"tempora\",\n    \"last_name\": \"voluptatem\",\n    \"enterprise_name\": \"ut\",\n    \"email\": \"optio\",\n    \"phone\": \"omnis\",\n    \"id_type\": \"illum\",\n    \"id_number\": \"non\",\n    \"date_of_birth\": \"eveniet\",\n    \"address\": \"autem\",\n    \"account_type\": \"porro\",\n    \"active\": \"ad\",\n    \"verified\": \"qui\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/users/:user/reactivate",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/users/:user/reactivate",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "reprehenderit",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"username\": \"et\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:search",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:search",
+                            "variable": [
+                                {
+                                    "id": "search",
+                                    "key": "search",
+                                    "value": "esse",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "93"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "879"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application/json; charset=utf-8"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Cannot do exclusion on field active in inclusion projection\",\n    \"stack\": \"MongoServerError: Cannot do exclusion on field active in inclusion projection\\n    at Connection.onMessage (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:201:30)\\n    at MessageStream.<anonymous> (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:59:60)\\n    at MessageStream.emit (node:events:513:28)\\n    at processIncomingData (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:124:16)\\n    at MessageStream._write (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:33:9)\\n    at writeOrBuffer (node:internal/streams/writable:392:12)\\n    at _write (node:internal/streams/writable:333:10)\\n    at Writable.write (node:internal/streams/writable:337:10)\\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\\n    at TLSSocket.emit (node:events:513:28)\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "92"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "878"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vehicle_type\": \"voluptas\",\n    \"vehicle_brand\": \"vel\",\n    \"vehicle_model\": \"earum\",\n    \"vehicle_engine_number\": \"non\",\n    \"vehicle_identification_number\": \"eius\",\n    \"vehicle_plate_number\": \"sed\",\n    \"vehicle_hire_rate_in_figures\": \"minus\",\n    \"vehicle_hire_rate_currency\": \"quia\",\n    \"vehicle_hire_charge_per_timing\": \"consequatur\",\n    \"maximum_allowable_distance\": \"ut\",\n    \"status\": \"consequuntur\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/my-vehicles",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/my-vehicles"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "91"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "878"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application/json; charset=utf-8"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Cannot do exclusion on field active in inclusion projection\",\n    \"stack\": \"MongoServerError: Cannot do exclusion on field active in inclusion projection\\n    at Connection.onMessage (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:201:30)\\n    at MessageStream.<anonymous> (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:59:60)\\n    at MessageStream.emit (node:events:513:28)\\n    at processIncomingData (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:124:16)\\n    at MessageStream._write (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:33:9)\\n    at writeOrBuffer (node:internal/streams/writable:392:12)\\n    at _write (node:internal/streams/writable:333:10)\\n    at Writable.write (node:internal/streams/writable:337:10)\\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\\n    at TLSSocket.emit (node:events:513:28)\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/users/:user",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/users/:user",
+                            "variable": [
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "fugit",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "90"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "878"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle/delete",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle/delete",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "et",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "commodi",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "89"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "878"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application/json; charset=utf-8"
+                                }
+                            ],
+                            "code": 500,
+                            "body": "{\n    \"message\": \"Cannot do exclusion on field active in inclusion projection\",\n    \"stack\": \"MongoServerError: Cannot do exclusion on field active in inclusion projection\\n    at Connection.onMessage (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:201:30)\\n    at MessageStream.<anonymous> (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\connection.js:59:60)\\n    at MessageStream.emit (node:events:513:28)\\n    at processIncomingData (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:124:16)\\n    at MessageStream._write (C:\\\\Users\\\\maxim\\\\Desktop\\\\projects\\\\github-repo\\\\rent-a-ride\\\\server\\\\node_modules\\\\mongodb\\\\lib\\\\cmap\\\\message_stream.js:33:9)\\n    at writeOrBuffer (node:internal/streams/writable:392:12)\\n    at _write (node:internal/streams/writable:333:10)\\n    at Writable.write (node:internal/streams/writable:337:10)\\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\\n    at TLSSocket.emit (node:events:513:28)\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "eos",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vehicle_type\": \"sunt\",\n    \"vehicle_brand\": \"quia\",\n    \"vehicle_model\": \"incidunt\",\n    \"vehicle_engine_number\": \"quam\",\n    \"vehicle_identification_number\": \"et\",\n    \"vehicle_plate_number\": \"quo\",\n    \"vehicle_hire_rate_in_figures\": \"voluptatum\",\n    \"vehicle_hire_rate_currency\": \"dicta\",\n    \"vehicle_hire_charge_per_timing\": \"sunt\",\n    \"maximum_allowable_distance\": \"error\",\n    \"status\": \"necessitatibus\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "aliquam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vehicle_type\": \"perferendis\",\n    \"vehicle_brand\": \"ut\",\n    \"vehicle_model\": \"unde\",\n    \"vehicle_engine_number\": \"explicabo\",\n    \"vehicle_identification_number\": \"vel\",\n    \"vehicle_plate_number\": \"deserunt\",\n    \"vehicle_hire_rate_in_figures\": \"eaque\",\n    \"vehicle_hire_rate_currency\": \"est\",\n    \"vehicle_hire_charge_per_timing\": \"cupiditate\",\n    \"maximum_allowable_distance\": \"minima\",\n    \"status\": \"atque\",\n    \"verified\": \"molestiae\",\n    \"active\": \"ducimus\",\n    \"company_owned\": \"ad\",\n    \"deleted_at\": \"tenetur\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "est",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicles/:vehicle/re-activate",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicles/:vehicle/re-activate",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "doloribus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "88"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "877"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vehicle\": \"aperiam\",\n    \"hiree\": \"et\",\n    \"hirer\": \"quia\",\n    \"release_date\": \"qui\",\n    \"release_time\": \"quibusdam\",\n    \"due_back_date\": \"autem\",\n    \"due_back_time\": \"modi\",\n    \"return_date\": \"suscipit\",\n    \"return_time\": \"est\",\n    \"vehicle_hire_charge_timing\": \"ea\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires/:vehicle-hire",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires/:vehicle-hire",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "ducimus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "87"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "877"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "text/plain; charset=utf-8"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "Unauthorized",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires/:vehicle-hire",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires/:vehicle-hire",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "ab",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires/:id",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "officiis",
+                                    "description": "The ID of the api/v1/vehicle hire."
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"vehicle\": \"eos\",\n    \"hiree\": \"dolores\",\n    \"hirer\": \"omnis\",\n    \"release_date\": \"aut\",\n    \"release_time\": \"sed\",\n    \"due_back_date\": \"omnis\",\n    \"due_back_time\": \"ipsam\",\n    \"return_date\": \"ut\",\n    \"return_time\": \"odit\",\n    \"vehicle_hire_charge_timing\": \"rem\",\n    \"booked_by\": \"doloremque\",\n    \"booking_updated_by\": \"sint\",\n    \"paid\": \"dolores\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires/:id",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "et",
+                                    "description": "The ID of the api/v1/vehicle hire."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api/v1/vehicle-hires/:vehicle-hire/reactivate",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/api/v1/vehicle-hires/:vehicle-hire/reactivate",
+                            "variable": [
+                                {
+                                    "id": "vehicle",
+                                    "key": "vehicle",
+                                    "value": "aliquam",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"hire\": \"aliquam\"\n}"
+                        },
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-security-policy",
+                                    "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                                },
+                                {
+                                    "key": "cross-origin-embedder-policy",
+                                    "value": "require-corp"
+                                },
+                                {
+                                    "key": "cross-origin-opener-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "cross-origin-resource-policy",
+                                    "value": "same-origin"
+                                },
+                                {
+                                    "key": "x-dns-prefetch-control",
+                                    "value": "off"
+                                },
+                                {
+                                    "key": "x-frame-options",
+                                    "value": "SAMEORIGIN"
+                                },
+                                {
+                                    "key": "strict-transport-security",
+                                    "value": "max-age=15552000; includeSubDomains"
+                                },
+                                {
+                                    "key": "x-download-options",
+                                    "value": "noopen"
+                                },
+                                {
+                                    "key": "x-content-type-options",
+                                    "value": "nosniff"
+                                },
+                                {
+                                    "key": "origin-agent-cluster",
+                                    "value": "?1"
+                                },
+                                {
+                                    "key": "x-permitted-cross-domain-policies",
+                                    "value": "none"
+                                },
+                                {
+                                    "key": "referrer-policy",
+                                    "value": "no-referrer"
+                                },
+                                {
+                                    "key": "x-xss-protection",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "ratelimit-limit",
+                                    "value": "100"
+                                },
+                                {
+                                    "key": "ratelimit-remaining",
+                                    "value": "86"
+                                },
+                                {
+                                    "key": "ratelimit-reset",
+                                    "value": "877"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application/json; charset=utf-8"
+                                }
+                            ],
+                            "code": 404,
+                            "body": "{\n    \"message\": \"404 Not Found\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "HEAD",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "*",
+                            "query": [],
+                            "raw": "http://{{baseUrl}}/*"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": null,
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

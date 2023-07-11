@@ -10,8 +10,7 @@ const rfs = require('rotating-file-stream');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const fileupload = require('express-fileupload'); 
-const { logEvents } = require('./config/errorLogger')
-const errorLogHandler = require('./config/errorLogHandler')
+const errorHandler = require('./middleware/errorHandler');
 const corsOptions = require('./config/corsOptions');
 const mongoose = require('mongoose');
 const dbConnection = require('./config/dbConnect');
@@ -39,27 +38,27 @@ dbConnection();
 app.disable('x-powered-by');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(cookieParser());
-app.use(fileupload({useTempFiles: true}))
+app.use(fileupload({useTempFiles: true}));
 
-app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/api/', express.static(path.join(__dirname, 'public')))
+app.use('/', express.static(path.join(__dirname, 'public')));
+app.use('/api', express.static(path.join(__dirname, 'public')));
 
-app.use('/api', require('./routes/api'));
+app.use('/api/v1', require('./routes/api'));
 
 app.all('*', (req, res) => {
-    res.status(404)
+    res.status(404);
     if (req.accepts('html')) {
-        res.sendFile(path.join(__dirname, 'views', '404.ejs'))
+        res.sendFile(path.join(__dirname, 'views', '404.ejs'));
     } else if (req.accepts('json')) {
-        res.json({ message: '404 Not Found' })
+        res.json({ message: '404 Not Found' });
     } else {
-        res.type('txt').send('404 Not Found')
-    }
-})
+        res.type('txt').send('404 Not Found');
+    };
+});
 
-app.use(errorLogHandler)
+app.use(errorHandler);
 
 mongoose.connection.once('open', () => {
     console.log('Database connection established');
@@ -67,6 +66,5 @@ mongoose.connection.once('open', () => {
 });
 
 mongoose.connection.on('error', err => {
-    console.log(err)
-    logEvents(`${err.no}: ${err.code}\t${err.syscall}\t${err.hostname}`, 'mongoErrLog.log')
+    console.log(err);
 });

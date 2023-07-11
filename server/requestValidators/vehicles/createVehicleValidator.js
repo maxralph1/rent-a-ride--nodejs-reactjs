@@ -3,6 +3,7 @@ const Joi = require('joi');
 
 const createVehicleSchema = Joi.object({
     vehicle_type: Joi.string().max(30).required(),
+    vehicle_type_if_others: Joi.string(),
     vehicle_brand: Joi.string().max(30).required(),
     vehicle_model: Joi.string().max(30).required(),
     vehicle_engine_number: Joi.string().max(30).required(),

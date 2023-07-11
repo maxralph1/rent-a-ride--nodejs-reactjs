@@ -11,9 +11,20 @@ router.use(authenticated)
 router.route('/')
         .get(checkRoles(roles.admin), vehicleLocationController.getAllVehiclesLocations)
 
-router.get('/:vehicle/:vehicle-location', vehicleLocationController.getAllCurrentVehicleLocations);
+router.get('/users/:user', vehicleLocationController.getAllUserVehiclesLocations);
 
-router.all('/:vehicle/:vehicle-location/add-update', checkRoles(roles.admin), vehicleLocationController.addUpdateVehicleLocation)
+router.get('/auth', vehicleLocationController.getAllAuthUserVehiclesLocations);
+
+router.get('/vehicles/:vehicle', vehicleLocationController.getAllCurrentVehicleLocations);
+
+router.put('/:vehicle/:vehicleLocation/add-update', vehicleLocationController.addUpdateVehicleLocation);
+
+router.route('/:vehicleLocation')
+        .put(vehicleLocationController.softDeleteVehicleLocation)
+        .patch(checkRoles(roles.admin), vehicleLocationController.reactivateSoftDeletedVehicleLocation)
+        .delete(checkRoles(roles.admin), vehicleLocationController.deleteVehicleLocation)
+
+// router.all('/:vehicle/:vehicle-location/add-update', checkRoles(roles.admin), vehicleLocationController)
 
 
 module.exports = router;

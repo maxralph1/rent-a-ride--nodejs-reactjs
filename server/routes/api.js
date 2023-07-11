@@ -4,9 +4,9 @@ const authRouter = require('./apiRoutes/authRoutes');
 const userRouter = require('./apiRoutes/userRoutes');
 const vehicleRouter = require('./apiRoutes/vehicleRoutes');
 const vehicleHireRoutes = require('./apiRoutes/vehicleHireRoutes');
-const paymentRouter = require('./apiRoutes/paymentRoutes');
-const userLocationRouter = require('./apiRoutes/userLocationRoutes');
-const vehicleLocationRoutes = require('./apiRoutes/vehicleLocationRoutes')
+// const paymentRouter = require('./apiRoutes/paymentRoutes');
+// const userLocationRouter = require('./apiRoutes/userLocationRoutes');
+// const vehicleLocationRoutes = require('./apiRoutes/vehicleLocationRoutes')
 
 
 router.use('/auth', authRouter);

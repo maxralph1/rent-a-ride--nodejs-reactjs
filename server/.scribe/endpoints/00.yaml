@@ -1,0 +1,1709 @@
+name: Endpoints
+endpoints:
+  - uri: /api/v1/auth/refresh-token
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '99'
+          ratelimit-reset: '880'
+          content-type: application/json; charset=utf-8
+        content: |-
+          {
+              "message": "Unauthorized"
+          }
+    responseFields: {}
+  - uri: /api/v1/auth/register
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/auth/verify-email/:username/:token'
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      username:
+        name: username
+        example: fuga
+        required: true
+        type: string
+        description: ''
+        match: ':username'
+      token:
+        name: token
+        example: placeat
+        required: true
+        type: string
+        description: ''
+        match: ':token'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /api/v1/auth/login
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /api/v1/auth/logout
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 204
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '98'
+          ratelimit-reset: '879'
+        content: ''
+    responseFields: {}
+  - uri: /api/v1/auth/password-reset
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/auth/password-reset/:username/:token'
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      username:
+        name: username
+        example: dolore
+        required: true
+        type: string
+        description: ''
+        match: ':username'
+      token:
+        name: token
+        example: voluptatem
+        required: true
+        type: string
+        description: ''
+        match: ':token'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /api/v1/users
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '97'
+          ratelimit-reset: '879'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: /api/v1/users
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters:
+      username:
+        name: username
+        type: string
+        example: in
+        required: true
+        description: ''
+      first_name:
+        name: first_name
+        type: string
+        example: et
+        required: true
+        description: ''
+      other_names:
+        name: other_names
+        type: string
+        example: quae
+        required: true
+        description: ''
+      last_name:
+        name: last_name
+        type: string
+        example: nisi
+        required: true
+        description: ''
+      enterprise_name:
+        name: enterprise_name
+        type: string
+        example: ullam
+        required: true
+        description: ''
+      email:
+        name: email
+        type: string
+        example: molestiae
+        required: true
+        description: ''
+      phone:
+        name: phone
+        type: string
+        example: a
+        required: true
+        description: ''
+      id_type:
+        name: id_type
+        type: string
+        example: asperiores
+        required: true
+        description: ''
+      id_number:
+        name: id_number
+        type: string
+        example: dolor
+        required: true
+        description: ''
+      date_of_birth:
+        name: date_of_birth
+        type: string
+        example: consequatur
+        required: true
+        description: ''
+      address:
+        name: address
+        type: string
+        example: quia
+        required: true
+        description: ''
+      account_type:
+        name: account_type
+        type: string
+        example: aut
+        required: true
+        description: ''
+      active:
+        name: active
+        type: string
+        example: et
+        required: true
+        description: ''
+      verified:
+        name: verified
+        type: string
+        example: consequatur
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/users/:search'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      search:
+        name: search
+        example: aperiam
+        required: true
+        type: string
+        description: ''
+        match: ':search'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '96'
+          ratelimit-reset: '879'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: '/api/v1/users/:user/vehicles'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: voluptas
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '95'
+          ratelimit-reset: '879'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: '/api/v1/users/:user'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: qui
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '94'
+          ratelimit-reset: '879'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: '/api/v1/users/:user'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: incidunt
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters:
+      user:
+        name: user
+        type: string
+        example: illum
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/users/:user'
+    httpMethods:
+      - PUT
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: sunt
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters:
+      username:
+        name: username
+        type: string
+        example: est
+        required: true
+        description: ''
+      first_name:
+        name: first_name
+        type: string
+        example: repellat
+        required: true
+        description: ''
+      other_names:
+        name: other_names
+        type: string
+        example: in
+        required: true
+        description: ''
+      last_name:
+        name: last_name
+        type: string
+        example: et
+        required: true
+        description: ''
+      enterprise_name:
+        name: enterprise_name
+        type: string
+        example: deserunt
+        required: true
+        description: ''
+      email:
+        name: email
+        type: string
+        example: corrupti
+        required: true
+        description: ''
+      phone:
+        name: phone
+        type: string
+        example: ut
+        required: true
+        description: ''
+      id_type:
+        name: id_type
+        type: string
+        example: doloremque
+        required: true
+        description: ''
+      id_number:
+        name: id_number
+        type: string
+        example: est
+        required: true
+        description: ''
+      date_of_birth:
+        name: date_of_birth
+        type: string
+        example: sed
+        required: true
+        description: ''
+      address:
+        name: address
+        type: string
+        example: alias
+        required: true
+        description: ''
+      account_type:
+        name: account_type
+        type: string
+        example: qui
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/users/:user'
+    httpMethods:
+      - DELETE
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: officia
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/users/:user/update'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: aut
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters:
+      username:
+        name: username
+        type: string
+        example: et
+        required: true
+        description: ''
+      first_name:
+        name: first_name
+        type: string
+        example: aspernatur
+        required: true
+        description: ''
+      other_names:
+        name: other_names
+        type: string
+        example: tempora
+        required: true
+        description: ''
+      last_name:
+        name: last_name
+        type: string
+        example: voluptatem
+        required: true
+        description: ''
+      enterprise_name:
+        name: enterprise_name
+        type: string
+        example: ut
+        required: true
+        description: ''
+      email:
+        name: email
+        type: string
+        example: optio
+        required: true
+        description: ''
+      phone:
+        name: phone
+        type: string
+        example: omnis
+        required: true
+        description: ''
+      id_type:
+        name: id_type
+        type: string
+        example: illum
+        required: true
+        description: ''
+      id_number:
+        name: id_number
+        type: string
+        example: non
+        required: true
+        description: ''
+      date_of_birth:
+        name: date_of_birth
+        type: string
+        example: eveniet
+        required: true
+        description: ''
+      address:
+        name: address
+        type: string
+        example: autem
+        required: true
+        description: ''
+      account_type:
+        name: account_type
+        type: string
+        example: porro
+        required: true
+        description: ''
+      active:
+        name: active
+        type: string
+        example: ad
+        required: true
+        description: ''
+      verified:
+        name: verified
+        type: string
+        example: qui
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/users/:user/reactivate'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: reprehenderit
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters:
+      username:
+        name: username
+        type: string
+        example: et
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:search'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      search:
+        name: search
+        example: esse
+        required: true
+        type: string
+        description: ''
+        match: ':search'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 500
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '93'
+          ratelimit-reset: '879'
+          content-type: application/json; charset=utf-8
+        content: |-
+          {
+              "message": "Cannot do exclusion on field active in inclusion projection",
+              "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+          }
+    responseFields: {}
+  - uri: /api/v1/vehicles
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '92'
+          ratelimit-reset: '878'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: /api/v1/vehicles
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters:
+      vehicle_type:
+        name: vehicle_type
+        type: string
+        example: voluptas
+        required: true
+        description: ''
+      vehicle_brand:
+        name: vehicle_brand
+        type: string
+        example: vel
+        required: true
+        description: ''
+      vehicle_model:
+        name: vehicle_model
+        type: string
+        example: earum
+        required: true
+        description: ''
+      vehicle_engine_number:
+        name: vehicle_engine_number
+        type: string
+        example: non
+        required: true
+        description: ''
+      vehicle_identification_number:
+        name: vehicle_identification_number
+        type: string
+        example: eius
+        required: true
+        description: ''
+      vehicle_plate_number:
+        name: vehicle_plate_number
+        type: string
+        example: sed
+        required: true
+        description: ''
+      vehicle_hire_rate_in_figures:
+        name: vehicle_hire_rate_in_figures
+        type: string
+        example: minus
+        required: true
+        description: ''
+      vehicle_hire_rate_currency:
+        name: vehicle_hire_rate_currency
+        type: string
+        example: quia
+        required: true
+        description: ''
+      vehicle_hire_charge_per_timing:
+        name: vehicle_hire_charge_per_timing
+        type: string
+        example: consequatur
+        required: true
+        description: ''
+      maximum_allowable_distance:
+        name: maximum_allowable_distance
+        type: string
+        example: ut
+        required: true
+        description: ''
+      status:
+        name: status
+        type: string
+        example: consequuntur
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: /api/v1/vehicles/my-vehicles
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 500
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '91'
+          ratelimit-reset: '878'
+          content-type: application/json; charset=utf-8
+        content: |-
+          {
+              "message": "Cannot do exclusion on field active in inclusion projection",
+              "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+          }
+    responseFields: {}
+  - uri: '/api/v1/vehicles/users/:user'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      user:
+        name: user
+        example: fugit
+        required: true
+        type: string
+        description: ''
+        match: ':user'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '90'
+          ratelimit-reset: '878'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle/delete'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: et
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: commodi
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 500
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '89'
+          ratelimit-reset: '878'
+          content-type: application/json; charset=utf-8
+        content: |-
+          {
+              "message": "Cannot do exclusion on field active in inclusion projection",
+              "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+          }
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle'
+    httpMethods:
+      - PUT
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: eos
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters:
+      vehicle_type:
+        name: vehicle_type
+        type: string
+        example: sunt
+        required: true
+        description: ''
+      vehicle_brand:
+        name: vehicle_brand
+        type: string
+        example: quia
+        required: true
+        description: ''
+      vehicle_model:
+        name: vehicle_model
+        type: string
+        example: incidunt
+        required: true
+        description: ''
+      vehicle_engine_number:
+        name: vehicle_engine_number
+        type: string
+        example: quam
+        required: true
+        description: ''
+      vehicle_identification_number:
+        name: vehicle_identification_number
+        type: string
+        example: et
+        required: true
+        description: ''
+      vehicle_plate_number:
+        name: vehicle_plate_number
+        type: string
+        example: quo
+        required: true
+        description: ''
+      vehicle_hire_rate_in_figures:
+        name: vehicle_hire_rate_in_figures
+        type: string
+        example: voluptatum
+        required: true
+        description: ''
+      vehicle_hire_rate_currency:
+        name: vehicle_hire_rate_currency
+        type: string
+        example: dicta
+        required: true
+        description: ''
+      vehicle_hire_charge_per_timing:
+        name: vehicle_hire_charge_per_timing
+        type: string
+        example: sunt
+        required: true
+        description: ''
+      maximum_allowable_distance:
+        name: maximum_allowable_distance
+        type: string
+        example: error
+        required: true
+        description: ''
+      status:
+        name: status
+        type: string
+        example: necessitatibus
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: aliquam
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters:
+      vehicle_type:
+        name: vehicle_type
+        type: string
+        example: perferendis
+        required: true
+        description: ''
+      vehicle_brand:
+        name: vehicle_brand
+        type: string
+        example: ut
+        required: true
+        description: ''
+      vehicle_model:
+        name: vehicle_model
+        type: string
+        example: unde
+        required: true
+        description: ''
+      vehicle_engine_number:
+        name: vehicle_engine_number
+        type: string
+        example: explicabo
+        required: true
+        description: ''
+      vehicle_identification_number:
+        name: vehicle_identification_number
+        type: string
+        example: vel
+        required: true
+        description: ''
+      vehicle_plate_number:
+        name: vehicle_plate_number
+        type: string
+        example: deserunt
+        required: true
+        description: ''
+      vehicle_hire_rate_in_figures:
+        name: vehicle_hire_rate_in_figures
+        type: string
+        example: eaque
+        required: true
+        description: ''
+      vehicle_hire_rate_currency:
+        name: vehicle_hire_rate_currency
+        type: string
+        example: est
+        required: true
+        description: ''
+      vehicle_hire_charge_per_timing:
+        name: vehicle_hire_charge_per_timing
+        type: string
+        example: cupiditate
+        required: true
+        description: ''
+      maximum_allowable_distance:
+        name: maximum_allowable_distance
+        type: string
+        example: minima
+        required: true
+        description: ''
+      status:
+        name: status
+        type: string
+        example: atque
+        required: true
+        description: ''
+      verified:
+        name: verified
+        type: string
+        example: molestiae
+        required: true
+        description: ''
+      active:
+        name: active
+        type: string
+        example: ducimus
+        required: true
+        description: ''
+      company_owned:
+        name: company_owned
+        type: string
+        example: ad
+        required: true
+        description: ''
+      deleted_at:
+        name: deleted_at
+        type: string
+        example: tenetur
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle'
+    httpMethods:
+      - DELETE
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: est
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicles/:vehicle/re-activate'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: doloribus
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /api/v1/vehicle-hires
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '88'
+          ratelimit-reset: '877'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: /api/v1/vehicle-hires
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters:
+      vehicle:
+        name: vehicle
+        type: string
+        example: aperiam
+        required: true
+        description: ''
+      hiree:
+        name: hiree
+        type: string
+        example: et
+        required: true
+        description: ''
+      hirer:
+        name: hirer
+        type: string
+        example: quia
+        required: true
+        description: ''
+      release_date:
+        name: release_date
+        type: string
+        example: qui
+        required: true
+        description: ''
+      release_time:
+        name: release_time
+        type: string
+        example: quibusdam
+        required: true
+        description: ''
+      due_back_date:
+        name: due_back_date
+        type: string
+        example: autem
+        required: true
+        description: ''
+      due_back_time:
+        name: due_back_time
+        type: string
+        example: modi
+        required: true
+        description: ''
+      return_date:
+        name: return_date
+        type: string
+        example: suscipit
+        required: true
+        description: ''
+      return_time:
+        name: return_time
+        type: string
+        example: est
+        required: true
+        description: ''
+      vehicle_hire_charge_timing:
+        name: vehicle_hire_charge_timing
+        type: string
+        example: ea
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicle-hires/:vehicle-hire'
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: ducimus
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 401
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '87'
+          ratelimit-reset: '877'
+          content-type: text/plain; charset=utf-8
+        content: Unauthorized
+    responseFields: {}
+  - uri: '/api/v1/vehicle-hires/:vehicle-hire'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: ab
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicle-hires/:id'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        example: officiis
+        required: true
+        type: string
+        description: The ID of the api/v1/vehicle hire.
+        match: ':id'
+    queryParameters: {}
+    bodyParameters:
+      vehicle:
+        name: vehicle
+        type: string
+        example: eos
+        required: true
+        description: ''
+      hiree:
+        name: hiree
+        type: string
+        example: dolores
+        required: true
+        description: ''
+      hirer:
+        name: hirer
+        type: string
+        example: omnis
+        required: true
+        description: ''
+      release_date:
+        name: release_date
+        type: string
+        example: aut
+        required: true
+        description: ''
+      release_time:
+        name: release_time
+        type: string
+        example: sed
+        required: true
+        description: ''
+      due_back_date:
+        name: due_back_date
+        type: string
+        example: omnis
+        required: true
+        description: ''
+      due_back_time:
+        name: due_back_time
+        type: string
+        example: ipsam
+        required: true
+        description: ''
+      return_date:
+        name: return_date
+        type: string
+        example: ut
+        required: true
+        description: ''
+      return_time:
+        name: return_time
+        type: string
+        example: odit
+        required: true
+        description: ''
+      vehicle_hire_charge_timing:
+        name: vehicle_hire_charge_timing
+        type: string
+        example: rem
+        required: true
+        description: ''
+      booked_by:
+        name: booked_by
+        type: string
+        example: doloremque
+        required: true
+        description: ''
+      booking_updated_by:
+        name: booking_updated_by
+        type: string
+        example: sint
+        required: true
+        description: ''
+      paid:
+        name: paid
+        type: string
+        example: dolores
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicle-hires/:id'
+    httpMethods:
+      - DELETE
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        example: et
+        required: true
+        type: string
+        description: The ID of the api/v1/vehicle hire.
+        match: ':id'
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: '/api/v1/vehicle-hires/:vehicle-hire/reactivate'
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      vehicle:
+        name: vehicle
+        example: aliquam
+        required: true
+        type: string
+        description: ''
+        match: ':vehicle'
+    queryParameters: {}
+    bodyParameters:
+      hire:
+        name: hire
+        type: string
+        example: aliquam
+        required: true
+        description: ''
+    responses: []
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - DELETE
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - GET
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses:
+      - status: 404
+        description: ''
+        headers:
+          content-security-policy: >-
+            default-src 'self';base-uri 'self';font-src 'self' https:
+            data:;form-action 'self';frame-ancestors 'self';img-src 'self'
+            data:;object-src 'none';script-src 'self';script-src-attr
+            'none';style-src 'self' https:
+            'unsafe-inline';upgrade-insecure-requests
+          cross-origin-embedder-policy: require-corp
+          cross-origin-opener-policy: same-origin
+          cross-origin-resource-policy: same-origin
+          x-dns-prefetch-control: 'off'
+          x-frame-options: SAMEORIGIN
+          strict-transport-security: max-age=15552000; includeSubDomains
+          x-download-options: noopen
+          x-content-type-options: nosniff
+          origin-agent-cluster: '?1'
+          x-permitted-cross-domain-policies: none
+          referrer-policy: no-referrer
+          x-xss-protection: '0'
+          ratelimit-limit: '100'
+          ratelimit-remaining: '86'
+          ratelimit-reset: '877'
+          content-type: application/json; charset=utf-8
+        content: |-
+          {
+              "message": "404 Not Found"
+          }
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - HEAD
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - PATCH
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - POST
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}
+  - uri: /*
+    httpMethods:
+      - PUT
+    metadata:
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: {}
+    queryParameters: {}
+    bodyParameters: {}
+    responses: []
+    responseFields: {}

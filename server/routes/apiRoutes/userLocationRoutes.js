@@ -9,18 +9,19 @@ const checkRoles = require('../../middleware/checkRoles')
 router.use(authenticated)
 
 router.get('/')
-        .get(checkRoles(roles.admin), userLocationController.getAllUsersLocations)
-        .post(userLocationController.addLatestUserLocation);
+        .get(checkRoles(roles.admin), userLocationController.getAllUsersLocations);
 
-router.get('/users/:user', userLocationController.getAllCurrentUserLocations);
+router.route('/users/:user')
+        .get(checkRoles(roles.admin), userLocationController.getAllCurrentUserLocations);
 
 router.get('my-locations', userLocationController.getAllAuthUserLocations);
 
-router.put('/:userLocation/delete', userLocationController.softDeleteUserLocation);
+router.put('/:user/:userLocation/add-update', userLocationController.addUpdateUserLocation);
 
-router.put('/:userLocation/re-activate', userLocationController.reactivateSoftDeletedUserLocation);
-
-router.delete('/:userLocation', checkRoles(roles.admin), userLocationController.deleteUserLocation);
+router.route('/:userLocation')
+        .put(userLocationController.softDeleteUserLocation)
+        .patch(checkRoles(roles.admin), userLocationController.reactivateSoftDeletedUserLocation)
+        .delete(checkRoles(roles.admin), userLocationController.deleteUserLocation)
 
 
 module.exports = router;

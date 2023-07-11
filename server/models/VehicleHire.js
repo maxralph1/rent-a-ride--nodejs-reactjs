@@ -11,9 +11,13 @@ const vehicleHireSchema = new Schema({
             date: { type: String, default: Date.now }, 
             time: String 
         },
-        return: {
-            date: String,
-            time: String
+        return: Date, 
+        vehicle_hire_rate_due_in_figures: Number,
+        vehicle_hire_rate_due_currency: {
+            type: String, 
+            required: true,
+            enum: ['USD', 'Euro', 'British Pound'],
+            default: 'USD'
         },
         paid: { type: Boolean, default: false },
         vehicle_hire_charge_timing: {

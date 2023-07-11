@@ -39,13 +39,29 @@ const userSchema = new Schema({
             of: String,
             default: {}
         },
-        created_by: { type: Schema.Types.ObjectId, ref: 'User' },
-        deleted_at: String
+        created_by: { type: Schema.Types.ObjectId, ref: 'User' }, 
+        online: { type: Boolean, default: false }, 
+        show_online_status: { type: Boolean, default: true },
+        last_time_active: String,
+        deleted_at: { type: String, default: null }
     },
     {
         timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }
     }
 );
+
+userSchema.pre('save', async function (next) {
+    if (!this.isModified('password')) {
+        next();
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+});
+
+userSchema.methods.matchPassword = async function (enteredPassword) {
+    return await bcrypt.compare(enteredPassword, this.password);
+}
 
 
 module.exports = mongoose.model('User', userSchema);

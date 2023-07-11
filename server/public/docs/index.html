@@ -1,0 +1,7590 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Rent-A-Ride Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="css/theme-default.print.css" media="print">
+    <script src="js/theme-default-2.0.2.js"></script>
+
+    <link rel="stylesheet"
+          href="//unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="//unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script>
+    var baseUrl = "http://localhost:5000/";
+    </script>
+    <script src="js/tryitout-2.0.2.js"></script>
+    
+</head>
+
+<body data-languages="[&#34;bash&#34;,&#34;javascript&#34;]">
+<a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="navbar-image" />
+      </span>
+</a>
+<div class="tocify-wrapper">
+    
+    
+        <div class="lang-selector">
+            
+                <a href="#" data-language-name="bash">bash</a>
+            
+                <a href="#" data-language-name="javascript">javascript</a>
+            
+        </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+
+    <ul id="toc">
+    </ul>
+
+    
+        <ul class="toc-footer" id="toc-footer">
+            
+                <li><a href="collection.json">View Postman collection</a></li>
+            
+                <li><a href="http://github.com/knuckleswtf/scribe-js">Documentation powered by Scribe ✍</a></li>
+            
+        </ul>
+    
+        <ul class="toc-footer" id="last-updated">
+            <li>Last updated: July 7, 2023</li>
+        </ul>
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+  <p>Base URL:</p>
+</blockquote>
+<pre><code class="yaml language-yaml">http://localhost:5000
+</code></pre>
+
+        <h1 id="authenticatingrequests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        
+    <h1 id="Endpoints">Endpoints</h1>
+    <p>
+        
+    </p>
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-auth-refresh-token">GET /api/v1/auth/refresh-token</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-auth-refresh-token">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/auth/refresh-token"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/refresh-token"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-auth-refresh-token">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 99
+ratelimit-reset: 880
+content-type: application/json; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">{
+    "message": "Unauthorized"
+}</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-auth-refresh-token" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-auth-refresh-token"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-auth-refresh-token"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-auth-refresh-token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-auth-refresh-token"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-auth-refresh-token"
+      data-method="GET"
+      data-path="/api/v1/auth/refresh-token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-auth-refresh-token', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-auth-refresh-token"
+            onclick="tryItOut('GET-api-v1-auth-refresh-token');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-auth-refresh-token"
+            onclick="cancelTryOut('GET-api-v1-auth-refresh-token');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-auth-refresh-token" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/auth/refresh-token</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-auth-register">POST /api/v1/auth/register</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-auth-register">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/auth/register"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/register"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-auth-register">
+
+</span>
+<span id="execution-results-POST-api-v1-auth-register" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-auth-register"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-auth-register"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-auth-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-auth-register"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-auth-register"
+      data-method="POST"
+      data-path="/api/v1/auth/register"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-auth-register', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-auth-register"
+            onclick="tryItOut('POST-api-v1-auth-register');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-auth-register"
+            onclick="cancelTryOut('POST-api-v1-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-auth-register" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/auth/register</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-auth-verify-email-username-token">POST /api/v1/auth/verify-email/:username/:token</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-auth-verify-email--username--token">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/auth/verify-email/fuga/placeat"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/verify-email/fuga/placeat"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-auth-verify-email--username--token">
+
+</span>
+<span id="execution-results-POST-api-v1-auth-verify-email--username--token" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-auth-verify-email--username--token"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-auth-verify-email--username--token"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-auth-verify-email--username--token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-auth-verify-email--username--token"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-auth-verify-email--username--token"
+      data-method="POST"
+      data-path="/api/v1/auth/verify-email/:username/:token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-auth-verify-email--username--token', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-auth-verify-email--username--token"
+            onclick="tryItOut('POST-api-v1-auth-verify-email--username--token');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-auth-verify-email--username--token"
+            onclick="cancelTryOut('POST-api-v1-auth-verify-email--username--token');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-auth-verify-email--username--token" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/auth/verify-email/:username/:token</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="POST-api-v1-auth-verify-email--username--token"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+<p>
+<b><code>token</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="token"
+               data-endpoint="POST-api-v1-auth-verify-email--username--token"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-auth-login">POST /api/v1/auth/login</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-auth-login">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/auth/login"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-auth-login">
+
+</span>
+<span id="execution-results-POST-api-v1-auth-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-auth-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-auth-login"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-auth-login"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-auth-login"
+      data-method="POST"
+      data-path="/api/v1/auth/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-auth-login', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-auth-login"
+            onclick="tryItOut('POST-api-v1-auth-login');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-auth-login"
+            onclick="cancelTryOut('POST-api-v1-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-auth-login" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/auth/login</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-auth-logout">GET /api/v1/auth/logout</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-auth-logout">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/auth/logout"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-auth-logout">
+
+
+<blockquote>Example response (204):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 98
+ratelimit-reset: 879 </code></pre>
+</details> 
+
+<pre>
+
+<code>[Empty response]</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-auth-logout" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-auth-logout"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-auth-logout"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-auth-logout"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-auth-logout"
+      data-method="GET"
+      data-path="/api/v1/auth/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-auth-logout', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-auth-logout"
+            onclick="tryItOut('GET-api-v1-auth-logout');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-auth-logout"
+            onclick="cancelTryOut('GET-api-v1-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-auth-logout" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/auth/logout</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-auth-password-reset">POST /api/v1/auth/password-reset</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-auth-password-reset">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/auth/password-reset"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/password-reset"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-auth-password-reset">
+
+</span>
+<span id="execution-results-POST-api-v1-auth-password-reset" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-auth-password-reset"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-auth-password-reset"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-auth-password-reset" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-auth-password-reset"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-auth-password-reset"
+      data-method="POST"
+      data-path="/api/v1/auth/password-reset"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-auth-password-reset', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-auth-password-reset"
+            onclick="tryItOut('POST-api-v1-auth-password-reset');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-auth-password-reset"
+            onclick="cancelTryOut('POST-api-v1-auth-password-reset');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-auth-password-reset" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/auth/password-reset</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-auth-password-reset-username-token">POST /api/v1/auth/password-reset/:username/:token</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-auth-password-reset--username--token">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/auth/password-reset/dolore/voluptatem"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/auth/password-reset/dolore/voluptatem"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-auth-password-reset--username--token">
+
+</span>
+<span id="execution-results-POST-api-v1-auth-password-reset--username--token" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-auth-password-reset--username--token"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-auth-password-reset--username--token"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-auth-password-reset--username--token" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-auth-password-reset--username--token"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-auth-password-reset--username--token"
+      data-method="POST"
+      data-path="/api/v1/auth/password-reset/:username/:token"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-auth-password-reset--username--token', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-auth-password-reset--username--token"
+            onclick="tryItOut('POST-api-v1-auth-password-reset--username--token');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-auth-password-reset--username--token"
+            onclick="cancelTryOut('POST-api-v1-auth-password-reset--username--token');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-auth-password-reset--username--token" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/auth/password-reset/:username/:token</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="POST-api-v1-auth-password-reset--username--token"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+<p>
+<b><code>token</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="token"
+               data-endpoint="POST-api-v1-auth-password-reset--username--token"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-users">GET /api/v1/users</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-users">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/users"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-users">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 97
+ratelimit-reset: 879
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-users" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-users"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-users"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-users"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-users"
+      data-method="GET"
+      data-path="/api/v1/users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-users', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-users"
+            onclick="tryItOut('GET-api-v1-users');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-users"
+            onclick="cancelTryOut('GET-api-v1-users');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-users" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/users</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-users">POST /api/v1/users</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-users">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/users"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "username": "in",
+    "first_name": "et",
+    "other_names": "quae",
+    "last_name": "nisi",
+    "enterprise_name": "ullam",
+    "email": "molestiae",
+    "phone": "a",
+    "id_type": "asperiores",
+    "id_number": "dolor",
+    "date_of_birth": "consequatur",
+    "address": "quia",
+    "account_type": "aut",
+    "active": "et",
+    "verified": "consequatur"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "username": "in",
+    "first_name": "et",
+    "other_names": "quae",
+    "last_name": "nisi",
+    "enterprise_name": "ullam",
+    "email": "molestiae",
+    "phone": "a",
+    "id_type": "asperiores",
+    "id_number": "dolor",
+    "date_of_birth": "consequatur",
+    "address": "quia",
+    "account_type": "aut",
+    "active": "et",
+    "verified": "consequatur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-users">
+
+</span>
+<span id="execution-results-POST-api-v1-users" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-users"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-users"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-users" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-users"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-users"
+      data-method="POST"
+      data-path="/api/v1/users"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-users', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-users"
+            onclick="tryItOut('POST-api-v1-users');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-users"
+            onclick="cancelTryOut('POST-api-v1-users');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-users" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/users</code></b>
+</p>
+
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="first_name"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>other_names</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="other_names"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="last_name"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>enterprise_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="enterprise_name"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="email"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="phone"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_type"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_number"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="date_of_birth"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="address"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>account_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="account_type"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>active</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="active"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>verified</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="verified"
+               data-endpoint="POST-api-v1-users"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-users-search">GET /api/v1/users/:search</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-users--search">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/users/aperiam"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/aperiam"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-users--search">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 96
+ratelimit-reset: 879
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-users--search" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-users--search"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-users--search"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-users--search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-users--search"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-users--search"
+      data-method="GET"
+      data-path="/api/v1/users/:search"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-users--search', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-users--search"
+            onclick="tryItOut('GET-api-v1-users--search');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-users--search"
+            onclick="cancelTryOut('GET-api-v1-users--search');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-users--search" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/users/:search</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>search</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="search"
+               data-endpoint="GET-api-v1-users--search"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-users-user-vehicles">GET /api/v1/users/:user/vehicles</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-users--user-vehicles">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/users/voluptas/vehicles"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/voluptas/vehicles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-users--user-vehicles">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 95
+ratelimit-reset: 879
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-users--user-vehicles" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-users--user-vehicles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-users--user-vehicles"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-users--user-vehicles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-users--user-vehicles"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-users--user-vehicles"
+      data-method="GET"
+      data-path="/api/v1/users/:user/vehicles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-users--user-vehicles', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-users--user-vehicles"
+            onclick="tryItOut('GET-api-v1-users--user-vehicles');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-users--user-vehicles"
+            onclick="cancelTryOut('GET-api-v1-users--user-vehicles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-users--user-vehicles" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/users/:user/vehicles</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="GET-api-v1-users--user-vehicles"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-users-user">GET /api/v1/users/:user</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-users--user">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/users/qui"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/qui"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-users--user">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 94
+ratelimit-reset: 879
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-users--user" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-users--user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-users--user"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-users--user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-users--user"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-users--user"
+      data-method="GET"
+      data-path="/api/v1/users/:user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-users--user', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-users--user"
+            onclick="tryItOut('GET-api-v1-users--user');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-users--user"
+            onclick="cancelTryOut('GET-api-v1-users--user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-users--user" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/users/:user</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="GET-api-v1-users--user"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-users-user">PATCH /api/v1/users/:user</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-users--user">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/users/incidunt"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "user": "illum"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/incidunt"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "user": "illum"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-users--user">
+
+</span>
+<span id="execution-results-PATCH-api-v1-users--user" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-users--user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-users--user"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-users--user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-users--user"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-users--user"
+      data-method="PATCH"
+      data-path="/api/v1/users/:user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-users--user', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-users--user"
+            onclick="tryItOut('PATCH-api-v1-users--user');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-users--user"
+            onclick="cancelTryOut('PATCH-api-v1-users--user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-users--user" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/users/:user</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="PATCH-api-v1-users--user"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="PATCH-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PUT-api-v1-users-user">PUT /api/v1/users/:user</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PUT-api-v1-users--user">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PUT \
+    "http://localhost:5000//api/v1/users/sunt"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "username": "est",
+    "first_name": "repellat",
+    "other_names": "in",
+    "last_name": "et",
+    "enterprise_name": "deserunt",
+    "email": "corrupti",
+    "phone": "ut",
+    "id_type": "doloremque",
+    "id_number": "est",
+    "date_of_birth": "sed",
+    "address": "alias",
+    "account_type": "qui"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/sunt"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "username": "est",
+    "first_name": "repellat",
+    "other_names": "in",
+    "last_name": "et",
+    "enterprise_name": "deserunt",
+    "email": "corrupti",
+    "phone": "ut",
+    "id_type": "doloremque",
+    "id_number": "est",
+    "date_of_birth": "sed",
+    "address": "alias",
+    "account_type": "qui"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PUT-api-v1-users--user">
+
+</span>
+<span id="execution-results-PUT-api-v1-users--user" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUT-api-v1-users--user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUT-api-v1-users--user"></code></pre>
+</span>
+<span id="execution-error-PUT-api-v1-users--user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUT-api-v1-users--user"></code></pre>
+</span>
+
+<form id="form-PUT-api-v1-users--user"
+      data-method="PUT"
+      data-path="/api/v1/users/:user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUT-api-v1-users--user', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PUT-api-v1-users--user"
+            onclick="tryItOut('PUT-api-v1-users--user');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PUT-api-v1-users--user"
+            onclick="cancelTryOut('PUT-api-v1-users--user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PUT-api-v1-users--user" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-darkblue">PUT</small>
+
+
+    <b><code>/api/v1/users/:user</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="first_name"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>other_names</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="other_names"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="last_name"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>enterprise_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="enterprise_name"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="email"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="phone"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_type"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_number"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="date_of_birth"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="address"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>account_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="account_type"
+               data-endpoint="PUT-api-v1-users--user"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-DELETE-api-v1-users-user">DELETE /api/v1/users/:user</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-DELETE-api-v1-users--user">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request DELETE \
+    "http://localhost:5000//api/v1/users/officia"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/officia"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-DELETE-api-v1-users--user">
+
+</span>
+<span id="execution-results-DELETE-api-v1-users--user" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETE-api-v1-users--user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETE-api-v1-users--user"></code></pre>
+</span>
+<span id="execution-error-DELETE-api-v1-users--user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETE-api-v1-users--user"></code></pre>
+</span>
+
+<form id="form-DELETE-api-v1-users--user"
+      data-method="DELETE"
+      data-path="/api/v1/users/:user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETE-api-v1-users--user', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-DELETE-api-v1-users--user"
+            onclick="tryItOut('DELETE-api-v1-users--user');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-DELETE-api-v1-users--user"
+            onclick="cancelTryOut('DELETE-api-v1-users--user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-DELETE-api-v1-users--user" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-red">DELETE</small>
+
+
+    <b><code>/api/v1/users/:user</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="DELETE-api-v1-users--user"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-users-user-update">PATCH /api/v1/users/:user/update</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-users--user-update">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/users/aut/update"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "username": "et",
+    "first_name": "aspernatur",
+    "other_names": "tempora",
+    "last_name": "voluptatem",
+    "enterprise_name": "ut",
+    "email": "optio",
+    "phone": "omnis",
+    "id_type": "illum",
+    "id_number": "non",
+    "date_of_birth": "eveniet",
+    "address": "autem",
+    "account_type": "porro",
+    "active": "ad",
+    "verified": "qui"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/aut/update"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "username": "et",
+    "first_name": "aspernatur",
+    "other_names": "tempora",
+    "last_name": "voluptatem",
+    "enterprise_name": "ut",
+    "email": "optio",
+    "phone": "omnis",
+    "id_type": "illum",
+    "id_number": "non",
+    "date_of_birth": "eveniet",
+    "address": "autem",
+    "account_type": "porro",
+    "active": "ad",
+    "verified": "qui"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-users--user-update">
+
+</span>
+<span id="execution-results-PATCH-api-v1-users--user-update" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-users--user-update"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-users--user-update"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-users--user-update" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-users--user-update"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-users--user-update"
+      data-method="PATCH"
+      data-path="/api/v1/users/:user/update"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-users--user-update', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-users--user-update"
+            onclick="tryItOut('PATCH-api-v1-users--user-update');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-users--user-update"
+            onclick="cancelTryOut('PATCH-api-v1-users--user-update');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-users--user-update" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/users/:user/update</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="first_name"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>other_names</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="other_names"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="last_name"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>enterprise_name</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="enterprise_name"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="email"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>phone</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="phone"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_type"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>id_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id_number"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="date_of_birth"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>address</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="address"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>account_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="account_type"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>active</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="active"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>verified</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="verified"
+               data-endpoint="PATCH-api-v1-users--user-update"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-users-user-reactivate">PATCH /api/v1/users/:user/reactivate</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-users--user-reactivate">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/users/reprehenderit/reactivate"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "username": "et"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/users/reprehenderit/reactivate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "username": "et"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-users--user-reactivate">
+
+</span>
+<span id="execution-results-PATCH-api-v1-users--user-reactivate" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-users--user-reactivate"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-users--user-reactivate"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-users--user-reactivate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-users--user-reactivate"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-users--user-reactivate"
+      data-method="PATCH"
+      data-path="/api/v1/users/:user/reactivate"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-users--user-reactivate', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-users--user-reactivate"
+            onclick="tryItOut('PATCH-api-v1-users--user-reactivate');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-users--user-reactivate"
+            onclick="cancelTryOut('PATCH-api-v1-users--user-reactivate');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-users--user-reactivate" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/users/:user/reactivate</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="PATCH-api-v1-users--user-reactivate"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="username"
+               data-endpoint="PATCH-api-v1-users--user-reactivate"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicles-search">GET /api/v1/vehicles/:search</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicles--search">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicles/esse"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/esse"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicles--search">
+
+
+<blockquote>Example response (500):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 93
+ratelimit-reset: 879
+content-type: application/json; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">{
+    "message": "Cannot do exclusion on field active in inclusion projection",
+    "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+}</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicles--search" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicles--search"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicles--search"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicles--search" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicles--search"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicles--search"
+      data-method="GET"
+      data-path="/api/v1/vehicles/:search"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicles--search', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicles--search"
+            onclick="tryItOut('GET-api-v1-vehicles--search');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicles--search"
+            onclick="cancelTryOut('GET-api-v1-vehicles--search');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicles--search" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicles/:search</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>search</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="search"
+               data-endpoint="GET-api-v1-vehicles--search"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicles">GET /api/v1/vehicles</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicles">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicles"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicles">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 92
+ratelimit-reset: 878
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicles" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicles"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicles"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicles"
+      data-method="GET"
+      data-path="/api/v1/vehicles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicles', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicles"
+            onclick="tryItOut('GET-api-v1-vehicles');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicles"
+            onclick="cancelTryOut('GET-api-v1-vehicles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicles" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicles</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-vehicles">POST /api/v1/vehicles</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-vehicles">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/vehicles"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "vehicle_type": "voluptas",
+    "vehicle_brand": "vel",
+    "vehicle_model": "earum",
+    "vehicle_engine_number": "non",
+    "vehicle_identification_number": "eius",
+    "vehicle_plate_number": "sed",
+    "vehicle_hire_rate_in_figures": "minus",
+    "vehicle_hire_rate_currency": "quia",
+    "vehicle_hire_charge_per_timing": "consequatur",
+    "maximum_allowable_distance": "ut",
+    "status": "consequuntur"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "vehicle_type": "voluptas",
+    "vehicle_brand": "vel",
+    "vehicle_model": "earum",
+    "vehicle_engine_number": "non",
+    "vehicle_identification_number": "eius",
+    "vehicle_plate_number": "sed",
+    "vehicle_hire_rate_in_figures": "minus",
+    "vehicle_hire_rate_currency": "quia",
+    "vehicle_hire_charge_per_timing": "consequatur",
+    "maximum_allowable_distance": "ut",
+    "status": "consequuntur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-vehicles">
+
+</span>
+<span id="execution-results-POST-api-v1-vehicles" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-vehicles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-vehicles"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-vehicles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-vehicles"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-vehicles"
+      data-method="POST"
+      data-path="/api/v1/vehicles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-vehicles', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-vehicles"
+            onclick="tryItOut('POST-api-v1-vehicles');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-vehicles"
+            onclick="cancelTryOut('POST-api-v1-vehicles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-vehicles" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/vehicles</code></b>
+</p>
+
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>vehicle_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_type"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_brand</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_brand"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_model</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_model"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_engine_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_engine_number"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_identification_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_identification_number"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_plate_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_plate_number"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_in_figures</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_in_figures"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_currency</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_currency"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_charge_per_timing</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_charge_per_timing"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>maximum_allowable_distance</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="maximum_allowable_distance"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="status"
+               data-endpoint="POST-api-v1-vehicles"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicles-my-vehicles">GET /api/v1/vehicles/my-vehicles</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicles-my-vehicles">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicles/my-vehicles"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/my-vehicles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicles-my-vehicles">
+
+
+<blockquote>Example response (500):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 91
+ratelimit-reset: 878
+content-type: application/json; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">{
+    "message": "Cannot do exclusion on field active in inclusion projection",
+    "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+}</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicles-my-vehicles" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicles-my-vehicles"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicles-my-vehicles"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicles-my-vehicles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicles-my-vehicles"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicles-my-vehicles"
+      data-method="GET"
+      data-path="/api/v1/vehicles/my-vehicles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicles-my-vehicles', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicles-my-vehicles"
+            onclick="tryItOut('GET-api-v1-vehicles-my-vehicles');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicles-my-vehicles"
+            onclick="cancelTryOut('GET-api-v1-vehicles-my-vehicles');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicles-my-vehicles" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicles/my-vehicles</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicles-users-user">GET /api/v1/vehicles/users/:user</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicles-users--user">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicles/users/fugit"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/users/fugit"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicles-users--user">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 90
+ratelimit-reset: 878
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicles-users--user" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicles-users--user"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicles-users--user"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicles-users--user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicles-users--user"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicles-users--user"
+      data-method="GET"
+      data-path="/api/v1/vehicles/users/:user"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicles-users--user', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicles-users--user"
+            onclick="tryItOut('GET-api-v1-vehicles-users--user');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicles-users--user"
+            onclick="cancelTryOut('GET-api-v1-vehicles-users--user');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicles-users--user" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicles/users/:user</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>user</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="user"
+               data-endpoint="GET-api-v1-vehicles-users--user"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicles-vehicle-delete">PATCH /api/v1/vehicles/:vehicle/delete</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicles--vehicle-delete">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicles/et/delete"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/et/delete"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicles--vehicle-delete">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicles--vehicle-delete" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicles--vehicle-delete"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicles--vehicle-delete"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicles--vehicle-delete" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicles--vehicle-delete"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicles--vehicle-delete"
+      data-method="PATCH"
+      data-path="/api/v1/vehicles/:vehicle/delete"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicles--vehicle-delete', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicles--vehicle-delete"
+            onclick="tryItOut('PATCH-api-v1-vehicles--vehicle-delete');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicles--vehicle-delete"
+            onclick="cancelTryOut('PATCH-api-v1-vehicles--vehicle-delete');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicles--vehicle-delete" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle/delete</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle-delete"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicles-vehicle">GET /api/v1/vehicles/:vehicle</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicles--vehicle">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicles/commodi"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/commodi"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicles--vehicle">
+
+
+<blockquote>Example response (500):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 89
+ratelimit-reset: 878
+content-type: application/json; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">{
+    "message": "Cannot do exclusion on field active in inclusion projection",
+    "stack": "MongoServerError: Cannot do exclusion on field active in inclusion projection\n    at Connection.onMessage (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:201:30)\n    at MessageStream.<anonymous> (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\connection.js:59:60)\n    at MessageStream.emit (node:events:513:28)\n    at processIncomingData (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:124:16)\n    at MessageStream._write (C:\\Users\\maxim\\Desktop\\projects\\github-repo\\rent-a-ride\\server\\node_modules\\mongodb\\lib\\cmap\\message_stream.js:33:9)\n    at writeOrBuffer (node:internal/streams/writable:392:12)\n    at _write (node:internal/streams/writable:333:10)\n    at Writable.write (node:internal/streams/writable:337:10)\n    at TLSSocket.ondata (node:internal/streams/readable:766:22)\n    at TLSSocket.emit (node:events:513:28)"
+}</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicles--vehicle"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicles--vehicle"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicles--vehicle"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicles--vehicle"
+      data-method="GET"
+      data-path="/api/v1/vehicles/:vehicle"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicles--vehicle', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicles--vehicle"
+            onclick="tryItOut('GET-api-v1-vehicles--vehicle');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicles--vehicle"
+            onclick="cancelTryOut('GET-api-v1-vehicles--vehicle');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicles--vehicle" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="GET-api-v1-vehicles--vehicle"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PUT-api-v1-vehicles-vehicle">PUT /api/v1/vehicles/:vehicle</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PUT-api-v1-vehicles--vehicle">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PUT \
+    "http://localhost:5000//api/v1/vehicles/eos"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "vehicle_type": "sunt",
+    "vehicle_brand": "quia",
+    "vehicle_model": "incidunt",
+    "vehicle_engine_number": "quam",
+    "vehicle_identification_number": "et",
+    "vehicle_plate_number": "quo",
+    "vehicle_hire_rate_in_figures": "voluptatum",
+    "vehicle_hire_rate_currency": "dicta",
+    "vehicle_hire_charge_per_timing": "sunt",
+    "maximum_allowable_distance": "error",
+    "status": "necessitatibus"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/eos"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "vehicle_type": "sunt",
+    "vehicle_brand": "quia",
+    "vehicle_model": "incidunt",
+    "vehicle_engine_number": "quam",
+    "vehicle_identification_number": "et",
+    "vehicle_plate_number": "quo",
+    "vehicle_hire_rate_in_figures": "voluptatum",
+    "vehicle_hire_rate_currency": "dicta",
+    "vehicle_hire_charge_per_timing": "sunt",
+    "maximum_allowable_distance": "error",
+    "status": "necessitatibus"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PUT-api-v1-vehicles--vehicle">
+
+</span>
+<span id="execution-results-PUT-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUT-api-v1-vehicles--vehicle"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUT-api-v1-vehicles--vehicle"></code></pre>
+</span>
+<span id="execution-error-PUT-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUT-api-v1-vehicles--vehicle"></code></pre>
+</span>
+
+<form id="form-PUT-api-v1-vehicles--vehicle"
+      data-method="PUT"
+      data-path="/api/v1/vehicles/:vehicle"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUT-api-v1-vehicles--vehicle', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PUT-api-v1-vehicles--vehicle"
+            onclick="tryItOut('PUT-api-v1-vehicles--vehicle');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PUT-api-v1-vehicles--vehicle"
+            onclick="cancelTryOut('PUT-api-v1-vehicles--vehicle');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PUT-api-v1-vehicles--vehicle" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-darkblue">PUT</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>vehicle_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_type"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_brand</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_brand"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_model</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_model"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_engine_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_engine_number"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_identification_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_identification_number"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_plate_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_plate_number"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_in_figures</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_in_figures"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_currency</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_currency"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_charge_per_timing</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_charge_per_timing"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>maximum_allowable_distance</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="maximum_allowable_distance"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="status"
+               data-endpoint="PUT-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicles-vehicle">PATCH /api/v1/vehicles/:vehicle</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicles--vehicle">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicles/aliquam"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "vehicle_type": "perferendis",
+    "vehicle_brand": "ut",
+    "vehicle_model": "unde",
+    "vehicle_engine_number": "explicabo",
+    "vehicle_identification_number": "vel",
+    "vehicle_plate_number": "deserunt",
+    "vehicle_hire_rate_in_figures": "eaque",
+    "vehicle_hire_rate_currency": "est",
+    "vehicle_hire_charge_per_timing": "cupiditate",
+    "maximum_allowable_distance": "minima",
+    "status": "atque",
+    "verified": "molestiae",
+    "active": "ducimus",
+    "company_owned": "ad",
+    "deleted_at": "tenetur"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/aliquam"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "vehicle_type": "perferendis",
+    "vehicle_brand": "ut",
+    "vehicle_model": "unde",
+    "vehicle_engine_number": "explicabo",
+    "vehicle_identification_number": "vel",
+    "vehicle_plate_number": "deserunt",
+    "vehicle_hire_rate_in_figures": "eaque",
+    "vehicle_hire_rate_currency": "est",
+    "vehicle_hire_charge_per_timing": "cupiditate",
+    "maximum_allowable_distance": "minima",
+    "status": "atque",
+    "verified": "molestiae",
+    "active": "ducimus",
+    "company_owned": "ad",
+    "deleted_at": "tenetur"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicles--vehicle">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicles--vehicle"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicles--vehicle"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicles--vehicle"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicles--vehicle"
+      data-method="PATCH"
+      data-path="/api/v1/vehicles/:vehicle"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicles--vehicle', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicles--vehicle"
+            onclick="tryItOut('PATCH-api-v1-vehicles--vehicle');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicles--vehicle"
+            onclick="cancelTryOut('PATCH-api-v1-vehicles--vehicle');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicles--vehicle" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>vehicle_type</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_type"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_brand</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_brand"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_model</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_model"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_engine_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_engine_number"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_identification_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_identification_number"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_plate_number</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_plate_number"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_in_figures</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_in_figures"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_rate_currency</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_rate_currency"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_charge_per_timing</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_charge_per_timing"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>maximum_allowable_distance</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="maximum_allowable_distance"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>status</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="status"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>verified</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="verified"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>active</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="active"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>company_owned</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="company_owned"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>deleted_at</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="deleted_at"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-DELETE-api-v1-vehicles-vehicle">DELETE /api/v1/vehicles/:vehicle</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-DELETE-api-v1-vehicles--vehicle">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request DELETE \
+    "http://localhost:5000//api/v1/vehicles/est"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/est"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-DELETE-api-v1-vehicles--vehicle">
+
+</span>
+<span id="execution-results-DELETE-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETE-api-v1-vehicles--vehicle"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETE-api-v1-vehicles--vehicle"></code></pre>
+</span>
+<span id="execution-error-DELETE-api-v1-vehicles--vehicle" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETE-api-v1-vehicles--vehicle"></code></pre>
+</span>
+
+<form id="form-DELETE-api-v1-vehicles--vehicle"
+      data-method="DELETE"
+      data-path="/api/v1/vehicles/:vehicle"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETE-api-v1-vehicles--vehicle', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-DELETE-api-v1-vehicles--vehicle"
+            onclick="tryItOut('DELETE-api-v1-vehicles--vehicle');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-DELETE-api-v1-vehicles--vehicle"
+            onclick="cancelTryOut('DELETE-api-v1-vehicles--vehicle');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-DELETE-api-v1-vehicles--vehicle" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-red">DELETE</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="DELETE-api-v1-vehicles--vehicle"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicles-vehicle-re-activate">PATCH /api/v1/vehicles/:vehicle/re-activate</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicles--vehicle-re-activate">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicles/doloribus/re-activate"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicles/doloribus/re-activate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicles--vehicle-re-activate">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicles--vehicle-re-activate" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicles--vehicle-re-activate"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicles--vehicle-re-activate"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicles--vehicle-re-activate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicles--vehicle-re-activate"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicles--vehicle-re-activate"
+      data-method="PATCH"
+      data-path="/api/v1/vehicles/:vehicle/re-activate"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicles--vehicle-re-activate', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicles--vehicle-re-activate"
+            onclick="tryItOut('PATCH-api-v1-vehicles--vehicle-re-activate');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicles--vehicle-re-activate"
+            onclick="cancelTryOut('PATCH-api-v1-vehicles--vehicle-re-activate');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicles--vehicle-re-activate" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicles/:vehicle/re-activate</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicles--vehicle-re-activate"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicle-hires">GET /api/v1/vehicle-hires</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicle-hires">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicle-hires"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicle-hires">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 88
+ratelimit-reset: 877
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicle-hires" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicle-hires"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicle-hires"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicle-hires" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicle-hires"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicle-hires"
+      data-method="GET"
+      data-path="/api/v1/vehicle-hires"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicle-hires', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicle-hires"
+            onclick="tryItOut('GET-api-v1-vehicle-hires');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicle-hires"
+            onclick="cancelTryOut('GET-api-v1-vehicle-hires');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicle-hires" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicle-hires</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-api-v1-vehicle-hires">POST /api/v1/vehicle-hires</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-api-v1-vehicle-hires">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//api/v1/vehicle-hires"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "vehicle": "aperiam",
+    "hiree": "et",
+    "hirer": "quia",
+    "release_date": "qui",
+    "release_time": "quibusdam",
+    "due_back_date": "autem",
+    "due_back_time": "modi",
+    "return_date": "suscipit",
+    "return_time": "est",
+    "vehicle_hire_charge_timing": "ea"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "vehicle": "aperiam",
+    "hiree": "et",
+    "hirer": "quia",
+    "release_date": "qui",
+    "release_time": "quibusdam",
+    "due_back_date": "autem",
+    "due_back_time": "modi",
+    "return_date": "suscipit",
+    "return_time": "est",
+    "vehicle_hire_charge_timing": "ea"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-api-v1-vehicle-hires">
+
+</span>
+<span id="execution-results-POST-api-v1-vehicle-hires" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-api-v1-vehicle-hires"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-api-v1-vehicle-hires"></code></pre>
+</span>
+<span id="execution-error-POST-api-v1-vehicle-hires" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-api-v1-vehicle-hires"></code></pre>
+</span>
+
+<form id="form-POST-api-v1-vehicle-hires"
+      data-method="POST"
+      data-path="/api/v1/vehicle-hires"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-api-v1-vehicle-hires', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-api-v1-vehicle-hires"
+            onclick="tryItOut('POST-api-v1-vehicle-hires');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-api-v1-vehicle-hires"
+            onclick="cancelTryOut('POST-api-v1-vehicle-hires');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-api-v1-vehicle-hires" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/api/v1/vehicle-hires</code></b>
+</p>
+
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>hiree</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="hiree"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>hirer</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="hirer"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>release_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="release_date"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>release_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="release_time"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>due_back_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="due_back_date"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>due_back_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="due_back_time"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>return_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="return_date"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>return_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="return_time"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_charge_timing</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_charge_timing"
+               data-endpoint="POST-api-v1-vehicle-hires"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-api-v1-vehicle-hires-vehicle-hire">GET /api/v1/vehicle-hires/:vehicle-hire</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-api-v1-vehicle-hires--vehicle-hire">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//api/v1/vehicle-hires/ducimus-hire"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires/ducimus-hire"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-api-v1-vehicle-hires--vehicle-hire">
+
+
+<blockquote>Example response (401):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 87
+ratelimit-reset: 877
+content-type: text/plain; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">Unauthorized</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-api-v1-vehicle-hires--vehicle-hire" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-api-v1-vehicle-hires--vehicle-hire"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-api-v1-vehicle-hires--vehicle-hire"></code></pre>
+</span>
+<span id="execution-error-GET-api-v1-vehicle-hires--vehicle-hire" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-api-v1-vehicle-hires--vehicle-hire"></code></pre>
+</span>
+
+<form id="form-GET-api-v1-vehicle-hires--vehicle-hire"
+      data-method="GET"
+      data-path="/api/v1/vehicle-hires/:vehicle-hire"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-api-v1-vehicle-hires--vehicle-hire', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-api-v1-vehicle-hires--vehicle-hire"
+            onclick="tryItOut('GET-api-v1-vehicle-hires--vehicle-hire');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-api-v1-vehicle-hires--vehicle-hire"
+            onclick="cancelTryOut('GET-api-v1-vehicle-hires--vehicle-hire');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-api-v1-vehicle-hires--vehicle-hire" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/api/v1/vehicle-hires/:vehicle-hire</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="GET-api-v1-vehicle-hires--vehicle-hire"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicle-hires-vehicle-hire">PATCH /api/v1/vehicle-hires/:vehicle-hire</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicle-hires--vehicle-hire">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicle-hires/ab-hire"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires/ab-hire"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicle-hires--vehicle-hire">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicle-hires--vehicle-hire" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicle-hires--vehicle-hire"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicle-hires--vehicle-hire"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicle-hires--vehicle-hire" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicle-hires--vehicle-hire"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicle-hires--vehicle-hire"
+      data-method="PATCH"
+      data-path="/api/v1/vehicle-hires/:vehicle-hire"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicle-hires--vehicle-hire', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicle-hires--vehicle-hire"
+            onclick="tryItOut('PATCH-api-v1-vehicle-hires--vehicle-hire');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicle-hires--vehicle-hire"
+            onclick="cancelTryOut('PATCH-api-v1-vehicle-hires--vehicle-hire');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicle-hires--vehicle-hire" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicle-hires/:vehicle-hire</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicle-hires--vehicle-hire"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicle-hires-id">PATCH /api/v1/vehicle-hires/:id</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicle-hires--id">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicle-hires/officiis"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "vehicle": "eos",
+    "hiree": "dolores",
+    "hirer": "omnis",
+    "release_date": "aut",
+    "release_time": "sed",
+    "due_back_date": "omnis",
+    "due_back_time": "ipsam",
+    "return_date": "ut",
+    "return_time": "odit",
+    "vehicle_hire_charge_timing": "rem",
+    "booked_by": "doloremque",
+    "booking_updated_by": "sint",
+    "paid": "dolores"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires/officiis"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "vehicle": "eos",
+    "hiree": "dolores",
+    "hirer": "omnis",
+    "release_date": "aut",
+    "release_time": "sed",
+    "due_back_date": "omnis",
+    "due_back_time": "ipsam",
+    "return_date": "ut",
+    "return_time": "odit",
+    "vehicle_hire_charge_timing": "rem",
+    "booked_by": "doloremque",
+    "booking_updated_by": "sint",
+    "paid": "dolores"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicle-hires--id">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicle-hires--id" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicle-hires--id"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicle-hires--id"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicle-hires--id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicle-hires--id"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicle-hires--id"
+      data-method="PATCH"
+      data-path="/api/v1/vehicle-hires/:id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicle-hires--id', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicle-hires--id"
+            onclick="tryItOut('PATCH-api-v1-vehicle-hires--id');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicle-hires--id"
+            onclick="cancelTryOut('PATCH-api-v1-vehicle-hires--id');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicle-hires--id" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicle-hires/:id</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="url" required hidden>
+    
+
+<br>
+<p>The ID of the api/v1/vehicle hire.</p>
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>hiree</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="hiree"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>hirer</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="hirer"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>release_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="release_date"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>release_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="release_time"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>due_back_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="due_back_date"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>due_back_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="due_back_time"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>return_date</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="return_date"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>return_time</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="return_time"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>vehicle_hire_charge_timing</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle_hire_charge_timing"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>booked_by</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="booked_by"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>booking_updated_by</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="booking_updated_by"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+    
+    
+            <p>
+                <b><code>paid</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="paid"
+               data-endpoint="PATCH-api-v1-vehicle-hires--id"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-DELETE-api-v1-vehicle-hires-id">DELETE /api/v1/vehicle-hires/:id</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-DELETE-api-v1-vehicle-hires--id">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request DELETE \
+    "http://localhost:5000//api/v1/vehicle-hires/et"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires/et"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-DELETE-api-v1-vehicle-hires--id">
+
+</span>
+<span id="execution-results-DELETE-api-v1-vehicle-hires--id" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETE-api-v1-vehicle-hires--id"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETE-api-v1-vehicle-hires--id"></code></pre>
+</span>
+<span id="execution-error-DELETE-api-v1-vehicle-hires--id" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETE-api-v1-vehicle-hires--id"></code></pre>
+</span>
+
+<form id="form-DELETE-api-v1-vehicle-hires--id"
+      data-method="DELETE"
+      data-path="/api/v1/vehicle-hires/:id"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETE-api-v1-vehicle-hires--id', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-DELETE-api-v1-vehicle-hires--id"
+            onclick="tryItOut('DELETE-api-v1-vehicle-hires--id');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-DELETE-api-v1-vehicle-hires--id"
+            onclick="cancelTryOut('DELETE-api-v1-vehicle-hires--id');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-DELETE-api-v1-vehicle-hires--id" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-red">DELETE</small>
+
+
+    <b><code>/api/v1/vehicle-hires/:id</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="id"
+               data-endpoint="DELETE-api-v1-vehicle-hires--id"
+               data-component="url" required hidden>
+    
+
+<br>
+<p>The ID of the api/v1/vehicle hire.</p>
+</p>
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-api-v1-vehicle-hires-vehicle-hire-reactivate">PATCH /api/v1/vehicle-hires/:vehicle-hire/reactivate</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//api/v1/vehicle-hires/aliquam-hire/reactivate"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data '{
+    "hire": "aliquam"
+}'
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//api/v1/vehicle-hires/aliquam-hire/reactivate"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+const body = {
+    "hire": "aliquam"
+}
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+    body: JSON.stringify(body),
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate">
+
+</span>
+<span id="execution-results-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"></code></pre>
+</span>
+<span id="execution-error-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"></code></pre>
+</span>
+
+<form id="form-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"
+      data-method="PATCH"
+      data-path="/api/v1/vehicle-hires/:vehicle-hire/reactivate"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"
+            onclick="tryItOut('PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"
+            onclick="cancelTryOut('PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/api/v1/vehicle-hires/:vehicle-hire/reactivate</code></b>
+</p>
+
+
+
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+
+
+<p>
+<b><code>vehicle</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="vehicle"
+               data-endpoint="PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"
+               data-component="url" required hidden>
+    
+
+<br>
+
+</p>
+
+
+
+
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+
+    
+    
+            <p>
+                <b><code>hire</code></b>&nbsp;&nbsp;<small>string</small>
+
+
+
+
+    
+        <input type="text"
+               name="hire"
+               data-endpoint="PATCH-api-v1-vehicle-hires--vehicle-hire-reactivate"
+               data-component="body" required hidden>
+    
+
+<br>
+
+            </p>
+        
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-DELETE-*">DELETE /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-DELETE-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request DELETE \
+    "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-DELETE-*">
+
+</span>
+<span id="execution-results-DELETE-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETE-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETE-*"></code></pre>
+</span>
+<span id="execution-error-DELETE-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETE-*"></code></pre>
+</span>
+
+<form id="form-DELETE-*"
+      data-method="DELETE"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETE-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-DELETE-*"
+            onclick="tryItOut('DELETE-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-DELETE-*"
+            onclick="cancelTryOut('DELETE-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-DELETE-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-red">DELETE</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-GET-*">GET /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-GET-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request GET \
+    --get "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-GET-*">
+
+
+<blockquote>Example response (404):</blockquote>
+
+
+<details class="annotation">
+    <summary>
+        <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+    </summary>
+    <pre><code class="language-http">
+content-security-policy: default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+cross-origin-embedder-policy: require-corp
+cross-origin-opener-policy: same-origin
+cross-origin-resource-policy: same-origin
+x-dns-prefetch-control: off
+x-frame-options: SAMEORIGIN
+strict-transport-security: max-age=15552000; includeSubDomains
+x-download-options: noopen
+x-content-type-options: nosniff
+origin-agent-cluster: ?1
+x-permitted-cross-domain-policies: none
+referrer-policy: no-referrer
+x-xss-protection: 0
+ratelimit-limit: 100
+ratelimit-remaining: 86
+ratelimit-reset: 877
+content-type: application/json; charset=utf-8 </code></pre>
+</details> 
+
+<pre>
+ 
+<!-- If response is a JSON string, prettify it. Otherwise, just print it -->
+<code class="language-json">{
+    "message": "404 Not Found"
+}</code>
+ </pre>
+
+
+</span>
+<span id="execution-results-GET-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-GET-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GET-*"></code></pre>
+</span>
+<span id="execution-error-GET-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GET-*"></code></pre>
+</span>
+
+<form id="form-GET-*"
+      data-method="GET"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GET-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-GET-*"
+            onclick="tryItOut('GET-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-GET-*"
+            onclick="cancelTryOut('GET-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-GET-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-green">GET</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-HEAD-*">HEAD /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-HEAD-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request HEAD \
+    "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "HEAD",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-HEAD-*">
+
+</span>
+<span id="execution-results-HEAD-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-HEAD-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-HEAD-*"></code></pre>
+</span>
+<span id="execution-error-HEAD-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-HEAD-*"></code></pre>
+</span>
+
+<form id="form-HEAD-*"
+      data-method="HEAD"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('HEAD-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-HEAD-*"
+            onclick="tryItOut('HEAD-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-HEAD-*"
+            onclick="cancelTryOut('HEAD-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-HEAD-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-darkgreen">HEAD</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PATCH-*">PATCH /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PATCH-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PATCH \
+    "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PATCH-*">
+
+</span>
+<span id="execution-results-PATCH-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCH-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCH-*"></code></pre>
+</span>
+<span id="execution-error-PATCH-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCH-*"></code></pre>
+</span>
+
+<form id="form-PATCH-*"
+      data-method="PATCH"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCH-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PATCH-*"
+            onclick="tryItOut('PATCH-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PATCH-*"
+            onclick="cancelTryOut('PATCH-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PATCH-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-purple">PATCH</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-POST-*">POST /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-POST-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request POST \
+    "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-POST-*">
+
+</span>
+<span id="execution-results-POST-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-POST-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POST-*"></code></pre>
+</span>
+<span id="execution-error-POST-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POST-*"></code></pre>
+</span>
+
+<form id="form-POST-*"
+      data-method="POST"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POST-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-POST-*"
+            onclick="tryItOut('POST-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-POST-*"
+            onclick="cancelTryOut('POST-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-POST-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-black">POST</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+        
+<h2 id="Endpoints-PUT-*">PUT /*</h2>
+
+<p>
+
+</p>
+
+
+
+<span id="example-requests-PUT-*">
+<blockquote>Example request:</blockquote>
+
+
+
+<pre><code class="bash language-bash">curl --request PUT \
+    "http://localhost:5000//*"  \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"
+</code></pre>
+
+
+
+<pre><code class="javascript language-javascript">const url = new URL(
+    "http://localhost:5000//*"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+.then(response =&gt; response.json())
+.then(json =&gt; console.log(json));
+</code></pre>
+
+
+</span>
+
+<span id="example-responses-PUT-*">
+
+</span>
+<span id="execution-results-PUT-*" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUT-*"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUT-*"></code></pre>
+</span>
+<span id="execution-error-PUT-*" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUT-*"></code></pre>
+</span>
+
+<form id="form-PUT-*"
+      data-method="PUT"
+      data-path="/*"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{&#34;Content-Type&#34;:&#34;application/json&#34;,&#34;Accept&#34;:&#34;application/json&#34;}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUT-*', this);">
+<h3>
+    Request&nbsp;
+    
+    <button
+            type="button"
+            style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-tryout-PUT-*"
+            onclick="tryItOut('PUT-*');">Try it out ⚡</button>
+    <button
+            type="button"
+            style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-canceltryout-PUT-*"
+            onclick="cancelTryOut('PUT-*');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button
+            type="submit"
+            style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+            id="btn-executetryout-PUT-*" hidden>Send Request 💥</button>
+    
+</h3>
+
+<p>
+    <small class="badge badge-darkblue">PUT</small>
+
+
+    <b><code>/*</code></b>
+</p>
+
+
+
+
+
+</form>
+
+
+
+    
+
+
+        
+    </div>
+    <div class="dark-box">
+        
+            <div class="lang-selector">
+                
+                    <a href="#" data-language-name="bash">bash</a>
+                
+                    <a href="#" data-language-name="javascript">javascript</a>
+                
+            </div>
+        
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var languages = ["bash","javascript"];
+        setupLanguages(languages);
+    });
+</script>
+
+</body>
+</html>

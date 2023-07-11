@@ -1,12 +1,62 @@
-const bcrypt = require('bcrypt');
+const asyncHandler = require('express-async-handler');
+// const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
-const sendMail = require('../../mails/sendMail');
+const registerUserSchema = require('../../requestValidators/auth/registerUserValidator'); 
 const registerEmailConfirmMailTemplate = require('../../mails/templates/registerEmailConfirmMail');
-const registerUserSchema = require('../../requestValidators/auth/registerUserValidator');
+const sendMail = require('../../mails/sendMail');
 
 
-const registerUser = async (req, res) => {
+/**
+ * @apiGroup Auth
+ * @apiPermission public
+ * @api {post} /api/v1/auth/register Register User
+ * @apiName RegisterUser
+ * 
+ * @apiDescription This registers a new user.
+ * 
+ * @apiBody {String} first_name       First name of the user.
+ * @apiBody {String} last_name       Last name of the user.
+ * @apiBody {String} username       Username of the user.
+ * @apiBody {String} email       Email of the user.
+ * @apiBody {String} password          Password of the user.
+ * @apiBody {String} account_type          Account type of the user.
+ * @apiExample {json} Request Body:
+ *     {
+ *       "first_name": "John",
+ *       "last_name": "Snow",
+ *       "username": "testinguser1",
+ *       "username": "johnsnow@email.com",
+ *       "password": "testinguserpassword",
+ *       "accoiunt_type": "individual",
+ *     }
+ *
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 201 Created
+ *     {
+ *       "success": `User ... created. A confirmation link has been sent to your email.`
+ *     }
+ * 
+ * @apiError LoginErrors Possible error messages.
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 400 Validation Failed
+ *     {
+ *       "message": "Validation failed.",
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 401 Unauthorized
+ *     {
+ *       "message": "An error occured",
+ *       "details": "..."
+ *     }
+ * 
+ *     HTTP/1.1 409 Conflict
+ *     {
+ *       "message": "User email ... already exists"
+ *     }
+ */
+const registerUser = asyncHandler(async (req, res) => {
     let validatedData;
     try {
         validatedData = await registerUserSchema.validateAsync({ username: req.body.username, 
@@ -14,14 +64,14 @@ const registerUser = async (req, res) => {
                                                             other_names: req.body.other_names,
                                                             last_name: req.body.last_name,
                                                             enterprise_name: req.body.enterprise_name,
-                                                            email: req.body.email,
+                                                            email: req.body.email, 
+                                                            password: req.body.password, 
                                                             phone: req.body.phone,
                                                             id_type: req.body.id_type,
                                                             id_number: req.body.id_number,
                                                             address: req.body.address,
                                                             date_of_birth: req.body.date_of_birth,
-                                                            account_type: req.body.account_type, 
-                                                            password: req.body.password });
+                                                            account_type: req.body.account_type, });
     } catch (error) {
         return res.status(400).json({ message: "Validation failed", details: `${error}` });
     }
@@ -34,8 +84,6 @@ const registerUser = async (req, res) => {
     } else if (duplicateEmail) {
         return res.status(409).json({ message: `User email ${duplicateEmail.email} already exists` });
     }
-
-    const hashedPassword = await bcrypt.hash(validatedData.password, 10);
 
     const emailVerifyToken = jwt.sign(
         { "username": req.body.username }, 
@@ -60,17 +108,16 @@ const registerUser = async (req, res) => {
         first_name: validatedData.first_name, 
         other_names: validatedData.other_names, 
         last_name: validatedData.last_name, 
-        user_image_path: validatedData.user_image_path, 
         enterprise_name: validatedData.enterprise_name, 
         email: validatedData.email, 
+        password: validatedData.password, 
         phone: validatedData.phone, 
         id_type: validatedData.id_type, 
         id_number: validatedData.id_number, 
-        user_identification_image_path: validatedData.user_identification_image_path, 
         address: validatedData.address, 
         date_of_birth: validatedData.date_of_birth,  
         roles: accountType, 
-        password: hashedPassword
+        email_verify_token: emailVerifyToken, 
     });
 
     user.save((error) => {
@@ -88,7 +135,7 @@ const registerUser = async (req, res) => {
     })();
 
     // newAccountNotify();
-};
+});
 
 
 module.exports = { registerUser };

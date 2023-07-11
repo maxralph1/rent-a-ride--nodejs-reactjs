@@ -23,7 +23,7 @@ router.get('/my-payments/received', paymentController.getAllAuthUserPaymentsRece
 router.patch('/:payment/re-activate', checkRoles(roles.admin), paymentController.reactivateSoftDeletePayment);
 
 router.route('/:payment')
-        .get('/:payment', paymentController.getPayment)
+        .get(paymentController.getPayment)
         .patch(paymentController.softDeletePayment)
         .put(checkRoles(roles.admin), paymentController.updatePayment)
         .delete(checkRoles(roles.admin), paymentController.deletePayment);

@@ -8,17 +8,17 @@ const interactionController = require('../../controllers/interactionController')
 
 router.use(authenticated);
 
-router.get('/:interaction/vehicles/:vehicle/users/:user', checkRoles(roles.admin), interactionController.getInteractionByVehicle);
+router.get('/vehicles/:vehicle', checkRoles(roles.admin), interactionController.getInteractionByVehicle);
 
-router.get('/:interaction/vehicles/:vehicle', interactionController.getInteractionByVehicleAuth);
+router.get('/vehicles/:vehicle/auth', interactionController.getInteractionByVehicleAuth);
 
-router.get('/:interaction/vehicle-hires/:hire/users/:user', checkRoles(roles.admin), interactionController.getInteractionByVehicleHire);
+router.get('/vehicle-hires/:hire', checkRoles(roles.admin), interactionController.getInteractionByVehicleHire);
 
-router.get('/:interaction/vehicle-hires/:hire', checkRoles(roles.admin), interactionController.getInteractionByVehicleHireAuth);
+router.get('/vehicle-hires/:hire/auth', checkRoles(roles.admin), interactionController.getInteractionByVehicleHireAuth);
 
-router.post('/:interaction/vehicles/:vehicle', interactionController.createInteractionForVehicle);
+router.post('/vehicles/:vehicle', interactionController.createInteractionForVehicle);
 
-router.post('/:interaction/vehicle-hires/:hire', interactionController.createInteractionForVehicleHire);
+router.post('/vehicle-hires/:hire', interactionController.createInteractionForVehicleHire);
 
 router.route('/:interaction')
         .put(interactionController.updateInteraction)
